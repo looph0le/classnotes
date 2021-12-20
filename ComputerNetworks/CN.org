@@ -1,1 +1,5 @@
-This is a Computer Networks file
+#+TITLE: Computer Networks
+#+DESCRIPTION: Notes For Computer Networks
+#+AUTHOR: Mitansh Panchal(looph0le)
+
+* Introduction
