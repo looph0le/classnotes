@@ -1,1 +1,1 @@
-#+TITAL: Fundamentals of Operating Systems
+#+TITEL: Fundamentals of Operating Systems
