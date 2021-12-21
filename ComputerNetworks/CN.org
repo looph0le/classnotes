@@ -3,4 +3,13 @@
 #+AUTHOR: Mitansh Panchal(looph0le)
 
 * Introduction
-**
+** Clients and Servers
+A client is somebody who buys goods for
+companiers and other organisation may also be clients.
+Example:
+ + A person who wants to access a website.
+
+A server is a computer or system that provides resources, data, services, programs, to other computers, known as clients over a network.
+** How a server works
+When a client requiers data or functionality from a server, it sends requests over then network.
+The servers recieves

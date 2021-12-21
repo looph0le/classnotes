@@ -1,0 +1,91 @@
+* Practicle 1[2021-12-21 Tue]
+** Introduction to java programming
+*** Aim: To create, compile and execute simple java program.
+*** Theory:
+ 1. What is java
+    Java is high level object-oriented programming language. It was concrived by James Gosling at Sun microsystems,Inc. in 1991. This language was initially called "/Oak/", but renamed to "/Java/" in 1995.
+
+ 2. How java changed the internet
+    Java introduced some new functionality that changed the way of using internet.
+    Such as:
+    - Java applets
+      An applet is a special kind of java program that is designed to be transmitted over the internet and automatically executed by a java compatible web browser.
+
+    - Security
+      Java archieves protection by confining an applet to the java execution environmnet and not allowing it access to other parts of the computer.
+
+    - Protability
+      Java supports multiple number of CPU's and operating systems, which allows the use of same code on all the different devices.
+
+ 3. What is byte code
+    Bytecode is a highly optimized set of instructions designed to be executed by the java run-time systems. Which is called the Java Vitual Machine(JVM).
+
+ 4. Java buzz words
+    The Buzz words are as follows:
+    - Simple
+      Java was designed to be easy for the professional programmers to learn and use effectively.
+
+    - Object-oriented
+      Java is basedon the concept of object-oriented-programming language making it rich in useability and functionality.
+
+    - Robust
+      Java can be used reliabily to create complex programs because of its robust architecture and design supporting number of devices and systems.
+
+    - Multithreaded
+      Java supports multithreaded programming, which allows you to write programs that do many things simultaneously.
+
+    - Architecture-Neutral
+      The java was designed to support the code even after number of system updates.
+
+    - Interpreted and high performance
+      Cross platform compiling enabled by java bytecode.
+
+    - Distributed
+      Java is designed for the destributed environmnet of the internet because it handles TCP/IP protocols.
+
+    - Dynamic
+      Java programs carry with substantial amounts of run-time type information that is used to varity and resolve access to object at the run-time.
+
+ 5. Define JDK, JRE and JVM
+    - Java Development Kit (JDK)
+      A  software development environmnet to develop java applications and applets.
+
+    - Java Runtime Environment (JRE)
+      A Runtime environmnet for java applications to run.
+
+    - Java Virtual Environment (JVM)
+      A virtual setup for execution of java bytecode.
+
+*** Programs:
+ 1. Write a java program to print 'Hello world'.
+
+    #+BEGIN_SRC java
+public class hello(){
+        public static void main(String[] args){
+                    System.out.println("Hello world");
+                }
+        }
+    #+END_SRC
+
+    OUTPUT:
+    Hello world
+
+ 2. Write a program to demonstrate the use of System.out.print and System.out.println statements.
+
+    #+BEGIN_SRC java
+public class hello(){
+            public static void main(String[] args){
+                    //Declaring variable
+                    String name = "Mitansh";
+
+                    //Printing
+                    System.out.println(name);
+                    System.out.print(name);
+
+                }
+        }
+    #+END_SRC
+
+    OUTPUT:
+    Mitansh
+    Mitansh
