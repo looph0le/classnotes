@@ -27,3 +27,10 @@ A File server store and destribute files. Multiple clients or users may share fi
 In addition, central storing files often easier to backup or fault tolerans solutions and integrity for files on every device in an organisation.
 
 File server hardware can be designed to maximize read and write speeds to improve performance.
+*** Print Server
+*** Application Server
+*** Web Server
+*** Database Server
+*** Proxy Server
+*** Virtual Server
+*** Mail Server
