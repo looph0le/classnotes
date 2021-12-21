@@ -1,4 +1,4 @@
-* Practicle 1[2021-12-21 Tue]
+* Practicle 1
 ** Introduction to java programming
 *** Aim: To create, compile and execute simple java program.
 *** Theory:
@@ -22,28 +22,37 @@
 
 **** 4. Java buzz words
     The Buzz words are as follows:
-    - Simple
+
+    Simple
+
       Java was designed to be easy for the professional programmers to learn and use effectively.
 
-    - Object-oriented
+    Object-oriented
+
       Java is basedon the concept of object-oriented-programming language making it rich in useability and functionality.
 
-    - Robust
+    Robust
+
       Java can be used reliabily to create complex programs because of its robust architecture and design supporting number of devices and systems.
 
-    - Multithreaded
+    Multithreaded
+
       Java supports multithreaded programming, which allows you to write programs that do many things simultaneously.
 
-    - Architecture-Neutral
+    Architecture-Neutral
+
       The java was designed to support the code even after number of system updates.
 
-    - Interpreted and high performance
+    Interpreted and high performance
+
       Cross platform compiling enabled by java bytecode.
 
-    - Distributed
+    Distributed
+
       Java is designed for the destributed environmnet of the internet because it handles TCP/IP protocols.
 
-    - Dynamic
+    Dynamic
+
       Java programs carry with substantial amounts of run-time type information that is used to varity and resolve access to object at the run-time.
 
 **** 5. Define JDK, JRE and JVM
@@ -88,6 +97,7 @@ public class hello(){
     #+END_SRC
 
     OUTPUT:
+
     Mitansh
 
     Mitansh
