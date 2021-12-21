@@ -9,12 +9,15 @@
     Java introduced some new functionality that changed the way of using internet.
     Such as:
     - Java applets
+
       An applet is a special kind of java program that is designed to be transmitted over the internet and automatically executed by a java compatible web browser.
 
     - Security
+
       Java archieves protection by confining an applet to the java execution environmnet and not allowing it access to other parts of the computer.
 
     - Protability
+
       Java supports multiple number of CPU's and operating systems, which allows the use of same code on all the different devices.
 
 **** 3. What is byte code
