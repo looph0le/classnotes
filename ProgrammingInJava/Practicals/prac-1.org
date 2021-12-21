@@ -68,6 +68,7 @@ public class hello(){
     #+END_SRC
 
     OUTPUT:
+
     Hello world
 
 **** 2. Write a program to demonstrate the use of System.out.print and System.out.println statements.
@@ -88,4 +89,5 @@ public class hello(){
 
     OUTPUT:
     Mitansh
+
     Mitansh
