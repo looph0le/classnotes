@@ -6,20 +6,15 @@
 ** Clients and Servers
 A client is somebody who buys goods for
 companiers and other organisation may also be clients.
-
 Example:
  + A person who wants to access a website.
-
 A server is a computer or system that provides resources, data, services, programs, to other computers, known as clients over a network.
 
 ** How a server works
 When a client requiers data or functionality from a server, it sends requests over then network.
 The servers recieves this request and responds with the appropriate information.
-
 This is the request and response model of client server networking.
-
 It is also known as call and response model.
-
 A server often performs neumerous additional tasks as part of a single request and response, including varifying the identity of the requester, ensuring that the client has permission to access the data or resources requested, and properly formating or determining the requierd response in an expected way.
 ** Types of Servers
 *** File Server
