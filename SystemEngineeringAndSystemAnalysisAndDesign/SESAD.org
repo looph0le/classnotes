@@ -1,1 +1,6 @@
-lol
+#+TITLE: System Engineering And System Analysis And Design
+
+* Introduction
+** What is System Analysis and Design
++ Systems are created to solve problems.
++ Think of the system approached

@@ -1,0 +1,66 @@
+Name    : Mitansh Panchal
+PRN     : 2020033800092492
+Subject : Computer Networks - I
+
+Sources :
+https://www.geeksforgeeks.org/types-of-computer-networks/
+https://www.javatpoint.com/types-of-computer-network
+
+Question:
+What are different types of Computer Networks.
+
+Brief:
+A computer network is a cluster of computers over a shared communication
+path that work for the purpose of sharing resources from one computer to
+another, provided by or located on the network nodes.
+
+The most used computer networks are as follows:
+1. Local Area Network(LAN)
+2. Personal Area Network(PAN)
+3. Metropolitan Area Network(MAN)
+4. Wide Area Network(WAN)
+
+Local Area Network(LAN)
+This is a group of computer connected together in a small distance area.
+A building, office can have this type of connection.
+The medium of connection maybe wireless or wired.
+Most users prefer wired connections for high data transfer speeds and ease of use.
+Highly secure and reliable.
+
+Personal Area Network(PAN)
+A network which is mostly controlled by an individual person.
+This network is used to connect devices to transfer files and folders.
+For example:
+Someone who wants to transfer photos from his laptop to a smartphone.
+
+Metropolitan Area Network(MAN)
+A Wide Area Network is a network that extends over a large geographical area
+such as states or countries.
+A Wide Area Network is not limited to a single location, but it spans over
+a large geographical area through a telephone line, fibre optic cable or satellite links.
+
+Wide Area Network(WAN)
+A Wide Area Network is a network that extends over a large geographical area such
+as states or countries.
+The internet is one of the biggest WAN in the world.
+
+Other types of networks
+
+Storage Area Network(SAN)
+SAN is a type of computer network that is high speed and connects groups of
+storage devices to several servers.
+
+System Area Network (SAN)
+A SAN is a type of computer network that connects a cluster of high performance
+computers. It is a connection-oriented and high bandwidth network.
+A SAN is a type of LAN that handles high amounts of information in large requests.
+This Networks is used to connect server clusters together.
+
+Enterprise Private Network (EPN)
+This type of connection is opt by big enterprises to secure there connections by
+introducting layers of protection.
+
+Virtual Private Network(VPN)
+A VPN is a type of computer network that extends a private network across the
+internet and lets the user send and receive data as if they were connected to a
+private network even though they are not.
