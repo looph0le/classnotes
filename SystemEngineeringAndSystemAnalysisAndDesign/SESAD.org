@@ -1,6 +1,100 @@
 #+TITLE: System Engineering And System Analysis And Design
 
 * Introduction
-** What is System Analysis and Design
-+ Systems are created to solve problems.
-+ Think of the system approached
+If we want to transfer data or information between the computers there are two ways.
+1. Without using network
+2. With the help of networks
+Just imagine that there are two computers which do not have any connection, still we want to transfer
+data then we have to use extra resources like Pen Drive, CD or DVD and compy it to other computer.
+This process is time consuming and requires more resources and money.
+With the help of network. We can transfer data or information all over the world from one system to another system.
+This process is easy, fast, secure and reliable.
+** Definition of Network:
+*** Computer Networks
+Computer network is defined as two or more computers are connected in such a way that they can
+share their data, information as well as their resources.
+Computer Network is the interconnected collection of autonoumous computer and peripheral devices.
+The links connecting the devices are called /communication channels/.
+The concept of connecting computers for sharing resources or data are called /Networking/.
+Two computer are said to be interconnected if they are able to exchange /data/ and /information/.
+*** Characteristics of Network
+**** Resource Sharing:
+It means all the computers within the network are able to share their resources which include
+all the programs, data, and devices available to anyone on the network without considering the
+physical location of the resource and user.
+**** High reliability:
+Network provides high reliability by having alternative sources of supply.
+**** Saving money:
+Mostly in networking, one computer work as server and other as client means only server computer
+require connection with resource and all other client can easily access it. So, it requires less
+hardware, hence saving a ton of money.
+**** Powerful communication medium:
+One a network, when one person make any change to a document. The other person can see the change
+immediatly instead of waiting several days.
+**** Scalability:
+Network is able to increase system performace as the work grows, just by upgrading the hardware.
+**** Low cost:
+Using networks, we are able to talk with any person at any part of the world with a low cost
+compare to telephone system.
+**** Time saving:
+E-mail services require less time compare to postal services.
+**** Flexibility of equipment location:
+We can change location anytime.
+**** Improved performace:
+We can improve performace by adding new efficient network hardware.
+*** Networks are used by people because:
+**** Access to remote information
+**** Person to person communication
+**** Interactive Entertaiment
+*** Advantages/Needs of Computer Network:
+**** Efficient management of resources
+**** Faster Data sharing
+**** Keeping information reliable and up to date
+**** High reliability
+**** Efficient communication
+** Network Criteria:
+Effective and efficient network must be able to meet following criteria.
+*** Performace
+Performace of a network is measured by two times.
+**** Transit time
+Time requied for a message to travel from one device to anoter.
+**** Response time
+Elapsed time between inquiry and response.
+*** Reliablity
+Network reliability is measured by
+**** Frequency of failure
+All networks fail occasionally.
+A network that fails often however is a little value.
+**** Recovery time of a network after a failure
+A network that recovers quickly is more useful that one that does not.
+**** Catastrophe events
+Network must be protected from the catastrophe events like fire, earthquake, tsunami, etc.
+**** Security
+Network security include protecting data from unauthorized access and viruses
+***** Unautorized access
+Sensitive data must be protected from unauthorized access.
+***** Viruses
+Network is accessible from many access points and can be susceptible to computer viruses.
+A virus is introduced to code that damages the system. A good network is protected to computer viruses.
+** Network Applications:
+*** Financial Services
+Credit history searches, foreign exchange, investment services and electronic money transfer, etc.
+*** Marketing and sales
+Marketing people use them for collecting, exchange and analyze data relating to customer.
+Sales applications include teleshopping, online reservation services, railway, airline, etc.
+*** Electronic messaging
+E-mail services are possible using networks.
+*** Manufacturing
+Computer networks are used in manufacturing processes.
+*** Directory service
+It allows list of files to be stored in particular location and search operation for the file.
+*** Information Services
+World wide web site offers the information services.
+*** Cable television
+This also uses computer networking concept
+*** Teleconferencing
+It allows conference to occure witout the particular being in same place.
+It includes text, audio and video conferencing.
+*** Electronic data exchange
+It allows business information to be transferred witout using paper.
+** Network Hardware
