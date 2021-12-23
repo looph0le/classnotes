@@ -1,0 +1,60 @@
+#+TITLE: Practical 1
+* Unix Operating System
+** Aim : To study various types of operating systems and the architecture and features of unix operating system.
+** Theory:
+*** What is an operating system
+- An operating system is a software that manages the computer's hardware and provides a convenient and safe
+  environment for running programs.
+  It acts as an interface between programs and the hardware resources that these programs access.
+  It is loaded into memory when a computer is booted and remains active as long as the machine is up.
+*** Types of operating system
+- Batch OS
+  Batch processing was very popular in the 1970s. The jobs were executed in batches. People used to have a single computer known as a mainframe. Users using batch operating systems do not interact directly with the computer. Each user prepares their job using an offline device like a punch card and submitting it to the computer operator. Jobs with similar requirements are grouped and executed as a group to speed up processing.
+
+- Multiprogramming OS
+  A multiprogramming operating system may run many programs on a single processor computer. If one program must wait for an input/output transfer in a multiprogramming operating system, the other programs are ready to use the CPU. As a result, various jobs may share CPU time. However, the execution of their jobs is not defined to be at the same time period.
+
+- Time Sharing OS
+  A time sharing operating system uses CPU scheduling and multi-programming to provide each with a small portion of a shared computer at once. Each user has at least one separate program in memory.
+
+- Parallel OS
+  Parallel operating systems follow the concept of parallel processing, it can carry out simultaneous
+  data-processing to achieve faster execution time.
+
+- Distributive OS
+  Multiple central processes are used by disctributed systems to server multiple real-time applications
+  and multiple users. Accordingly,  data processing jobs are distributed among the processes.
+
+- Real-Time OS
+  A real-time operating system is an operating system for real-time applications that processes data and events
+  that have critically defined time constrains.
+
+*** what is unix operating system
+Unix is an operating system which was first developed in the 1960's, and has been under constant development
+ever since.
+It is made up of three parts the kernel, the shell, and unix general-purpose utils.
+
+*** architecture of unix operating system
+Unix is made up 3 main parts:
+The Kernel. the shell, and the user commands and applications.
+The Kernel and shell are the heart of the operating system. The shell is an interface that interprests the command line inputs and calls the necessary programs to do the work.
+
+*** Features of unix operating system
+1. Multiuser system
+   Unix provides multiple programs to run and compete for the attention of the CPU. In unix, resources are shared between all the users, so-called a multi-user system.
+2. Multitask system
+   A single user may run multiple tasks concurrently.
+3. The building-block approach.
+   Unix has many commands, each of which performs one simple job only.
+   You can use '2' commands by using pipe('|') used for creating pipelines.
+4. The unix tool-kit
+   The unix has a kernel but the kernel alone can't do much that could help the users.
+   So we host the applications that usually come along with the unix systems.
+5. Pattern matching
+   Unix provides very sophisticated pattern matching features. The meta-character '*' is a special
+   character used by the system to match a number of file names.
+6. Programming Facility
+   Unix provides shell which is also a programming language designed for programmers, not for casual end-user.
+7. Documentation
+   It has a 'man' command that stands for the manual, which is the most important reference for any command
+   and their configuration files.

@@ -1,1 +1,9 @@
 #+TITLE: Fundamentals of Operating Systems
+#+DESCRIPTION: Notes on Operating System
+
+* Introduction
+** Features of UNIX operating system
+*** Files and processes
+Everything is trated as files.
+*** A multiuser system
+This is amazing

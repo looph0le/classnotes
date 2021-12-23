@@ -1,5 +1,3 @@
-Name    : Mitansh Panchal
-PRN     : 2020033800092492
 Subject : Computer Networks - I
 
 Sources :

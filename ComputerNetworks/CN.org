@@ -28,7 +28,12 @@ In addition, central storing files often easier to backup or fault tolerans solu
 
 File server hardware can be designed to maximize read and write speeds to improve performance.
 *** Print Server
+A print server or printing server is a type of server that connects printers to client computers over a network.
+It accepts print jobs from the computers and sends the job to the appropriate printers, queuing the job locally
+to accommodate the fact that work may arrive more quickly than the printer can actually handle.
+
 *** Application Server
+
 *** Web Server
 *** Database Server
 *** Proxy Server
