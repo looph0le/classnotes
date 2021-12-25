@@ -6,3 +6,40 @@
 ** History of java
 Java was conceived by James Gosling, Patrick Naughton, Chris Warth, Ed Frank and Mike Sheriden at sun microsystems, Inc. In 1991.
 This language was initially called "/Oak/", but latter renamed to "/Java/" in 1995. The orignal impetus for java was not the internet. Instead, to be used for consumer electronic devices, such as microwave, ovens and remote controls.
+* First program in java
+Printing "Hello world" in java.
+
+#+BEGIN_SRC java
+class hello{
+       public static void main(String[] args){
+           System.out.println("Hello world");
+           System.out.print("Hello world");
+        }
+    }
+#+END_SRC
+The above code print hello world two times after compiling the code.
+But as you have observed there are two print statements.
+And they both do different things.
+#+BEGIN_SRC java
+System.out.println("Hello world");
+#+END_SRC
+This print statement will print the following string /"Hello world"/ to the next corresponding line.
+Where as,
+#+BEGIN_SRC java
+System.out.print("Hello world");
+#+END_SRC
+* Taking input from user.
+Unlike C and python, java is little different approach to taking input from user.
+Here are some steps to begin with:
+#+BEGIN_SRC java
+import java.util.Scanner;
+#+END_SRC
+The first step is to introduce the class that has the required methods for the function we want to perform.
+The statement above is used to import the Scanner class into our code.
+Next, we want to create a constructor.
+#+BEGIN_SRC java
+Scanner sc = new Scanner(System.in);
+#+END_SRC
+The above constructor created a new object /sc/ which can be used to access the methods and perform the read
+function.
+By read function we mean it will convert the bytes from the input into characters using the platform's characteristics.
