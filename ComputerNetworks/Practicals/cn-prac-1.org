@@ -1,0 +1,30 @@
+#+TITLE: Practical 1
+#+DESCRIPTION: Types of Computer networks and topologies.
+
+* Aim:
+To study various types of computer networks and topologies.
+* Theory:
+** Defination of computer networks.
+Computer networks is defined as two or more computers are connected in such a way that they can share their data, as well as thier resources.
+** Types of computer networks.
+*** Local Area Network(LAN)
+LAN is a group of computers an  d network communication devices interconnected within the geographic limited area.
+*** Metropolitan Area Network(MAN)
+A MAN covers a much larger area and might cover an entier city but uses the LAN technology.
+*** Wide Area Network(WAN)
+When a network is spread over wide area, such as cities, states, countries or continents it is called a WAN.
+** Types of topologies.
+Topology can be described the actual layer of network transmission media.
+*** Bus topology
+Consists of several computers attached to a long common cable act as backbone, to link all the devices
+in the networks.
+*** Star topology
+In star topology each device have a dedicated point to point link only to a central controller usually called
+/HUB/.
+*** Ring Topology
+In Ring topology computers are connected on single circle of cable. There are no terminated ends.
+*** Mesh Topology
+In Mesh topology every device has a dedicated point-to-point link to every other device.
+* Conclusion:
+From this practical we concluded that computer networks are setup to communicate and share resources.
+And this may be achieved by many methods according to the requirement of the network.
