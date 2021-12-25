@@ -1,9 +1,9 @@
 #+TITLE: Fundamentals of Operating Systems
 #+DESCRIPTION: Notes on Operating System
 
-* Introduction
-** Features of UNIX operating system
-*** Files and processes
-Everything is trated as files.
-*** A multiuser system
-This is amazing
+* Getting Started
+** The Operating System
+An *Operating System* is the software that manages the computer's hardware and provides a convinient and safe
+environment for running programs. It acts as an interface between programs and the hardware resources that these
+programs access.
+It is loaded into memory when a computer is booted and remains active as long as the machine is up.
