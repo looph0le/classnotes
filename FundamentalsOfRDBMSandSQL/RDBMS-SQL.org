@@ -1,1 +1,10 @@
-#+TITAL: Fundamentals Of RDBSM & SQL
+#+TITLE: Fundamentals Of RDBMS and SQL
+
+* Oracle
+An oracle database is collection of data treated as a unit. The purpose of a data is to store and retrive related information. A database server is the key to solving the problems of information management.
+In general, a server reliably manages a large amount of data in a multiuser envirenment....
+** Introduction to SQL
+SQL is a standard language for accessing and manipulating database.
+SQL stands for Structured Query Language
+SQL lets you access and manipulate database
+SQL became a standard of the Americam

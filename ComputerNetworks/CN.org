@@ -33,7 +33,6 @@ It accepts print jobs from the computers and sends the job to the appropriate pr
 to accommodate the fact that work may arrive more quickly than the printer can actually handle.
 
 *** Application Server
-
 *** Web Server
 *** Database Server
 *** Proxy Server
