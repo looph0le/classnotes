@@ -98,3 +98,8 @@ It includes text, audio and video conferencing.
 *** Electronic data exchange
 It allows business information to be transferred witout using paper.
 ** Network Hardware
+* Structured Analysis
+** Levels of DFD
+*** 0 Level DFD
+*** 1 Level DFD
+*** 2 Level DFD
