@@ -201,3 +201,46 @@ IETF develops and promotes internet standards, coorperating closely with the W3C
 and ISO/IEC(International Electrotechnical Commission) standards bodies and dealing in particular with standards of the TCP/IP and internet protocol suit.
 **** EIA : Electronic Industries Association
 Is a trade organisation of electronics manufacturers in the United States.
+* Basic Concepts
+** Line Configuration
+Line configuration defines the attachment of communcation devices to a link.
+A link is a physical communication pathway that transfers data from one device to another device.
+For communicating to occure, two devices must be connected in some way to the same link at the same time.
+Types of line configuration.
+*** Point-to-point:
+Two and only t  wo devices are connected by a dedicated link. Dedicated means that link carries traffic between connected devices only.
+In this configuration, entire capacity of the channel is reserved for transmission between two devices.
+*** Multipoint:
+A multipoint configuration is one in which more than two specific devices share a single link.
+In this configuration. the capacity of the channel is shared either spatially or temporarily.
+**** Spactially Shared link configuration:
+If several devices can use the link simultaneouly(at same time) is called spatially shared link configuration.
+**** Time Shared Line Configuration:
+It means some fixed slots are given to the users are called time-shared line configuration.
+** Topology
+Topology which refers to the way interconnection path between many users or nodes are arranged. Or, Actual layout of network transmission media.
+*** Physical Topology:
+A network refers to the configuration of cables, computers and other peripherals.
+*** Logical Topology:
+Which is a method used to pass information between workstations.
+*** Types of topologies:
+**** Bus topology
+Also known as linear bus topology. It consists of several computers attached to a long common cable act as backbone to link all the devices in the network.
+In bus topology, data on the network is send to all the computers on the network.
+The data travels from one end of the cable to another end.
+However only the computer that has the address matching the address in the single accpets the data.
+only one computer at a time can send message.
+
+**** Star topology
+**** Ring topology
+**** Mesh topology
+**** Tree topology
+*** Categories of network
+Network classify according to their geographical size.
+Network referring to three primary categories.
+**** LAN(Local Area Network)
+LAN is a group of computers and network communication devices interconnected within the geographical limited area. Such as office, Buildings.
+LAN tends to use only one type of transmission medium was cabling.
+***** Characteristics of LAN
+***** Advantages of LAN
+**** MAN
