@@ -184,3 +184,20 @@ Founded in 1946, ISO is an international organization composed of national stand
 This committee was devoted to the research and established of standard for telecommunications.
 In march 1, 1993 the name of this committee was changed to ITU-T(International Telecommunication Union-Telecommunication Standards Sector).
 **** ANSI : American National Standards Institute
+The American National Standards Institute or ANSI is a private non-profit organization that oversees the development of voluntary consensus standards for product, services, processes, systems, and personnel in the United States.
+The organization also coordinates U.S. standards with international standards so that the American products can be used worldwide.
+**** IEEE : Institute of Electrical and Electronics Engineers
+Is an international non-profit, professional organization for the advancement of technology related to electricity.
+The IEEE is incorporeated in the State of New York, United States.
+The major interests of the AIEE were wire communcation(telegraph and telephony) and light and power systems.
+**** ITU : International Telecommunication Union
+Is the oldest international organization, establish to standardize and regulate international radio and telecommunications.
+ITU was founded in 1865 and became a United Nations Agency in 1947.
+**** ISOC : Internet Society
+Is an international, non-profit organization founded during 1992 to provide direction in internet related standards, education, and policy.
+It states that its mission is "to assure the open development, evolution and use of the internet of the benefit of all people throughout the world"
+**** IETF : Internet Engineering Task Force
+IETF develops and promotes internet standards, coorperating closely with the W3C(World Wide Web Consortium)
+and ISO/IEC(International Electrotechnical Commission) standards bodies and dealing in particular with standards of the TCP/IP and internet protocol suit.
+**** EIA : Electronic Industries Association
+Is a trade organisation of electronics manufacturers in the United States.
