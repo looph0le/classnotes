@@ -1,0 +1,153 @@
+#+TITLE: Practical 2 : Datatypes, Varibles & Operators
+
+* AIM : To demostrate the use of variables, various datatypes and operators.
+* Theroy :
+** What are datatypes.
+Data types specify the different sizes and values that can be stored in the variable. There are two types of data types in Java:
+*** Primitive datatypes
+The primitive data types include boolean, char, byte, short, int, long, float and double.
+*** Non-primitive datatypes
+The non-primitive data types include Classes, Interfaces, and Arrays.
+** Variables
+The variable is the basic unit of storage in a java program. A variable is defined by the combination of an identifier, type, and an optional intitializer. In addition, all variables have a scope, which defines their visibility, and lifetime.
+*** Declaring a Variable
+
+Type identifier = value;
+
+examples are:
+int a, b, c;
+int d = 3;
+byte z = 22;
+double pi = 3.14;
+char x = "x";
+
+*** Dynamic Initialization
+Dynamic initialization of object refers to initializing the objects at run time i.e. the initial value of an object is to be provided during run time. Dynamic initialization can be achieved using constructors and passing parameters values to the constructors. This type of initialization is required to initialize the class variables during run time.
+*** Scope and lifetime of Variables
+Java allows variables to be declared within any block. A block is begun with an opening curly brace and ended by a closing curly brace. A block defines ascope.Thus, each time you start a new block, you are creating a new scope. A scope determineswhat objects are visible to other parts of your program. It also determines the lifetime ofthose objects.
+** Java Operators
+Operator in Java is a symbol that is used to perform operations. For example: +, -, *, / etc.
+*** types of operators in Java:
+**** Unary operator
+**** Arithmatic operator
+**** Shift operator
+**** Relational operator
+**** Bitwise operator
+**** Logical operator
+**** Ternary operator
+**** Assignment operator
+* Programs :
+** Write a program to print Area and Circumference of a circle.
+#+BEGIN_SRC java
+import java.util.Scanner;
+
+class Circle{
+       public static void main(String[] args){
+           // Creating scanner constructor
+           Scanner scan = new Scanner(System.in);
+
+           System.out.print("Enter radius : ");
+           // Reading radius value from user
+           int r = scan.nextInt();
+
+           // Value of pi
+           int pi = 3.14;
+
+           // Calculating area of circle
+           int area = pi*(r*r);
+
+           // Calculating Circumference
+           int cir = 2*pi*r;
+
+           //Output
+           System.out.println("Area is : " + area);
+           System.out.println("Circumference is : " + cir);
+
+        }
+    }
+#+END_SRC
+** Write a program to convert temprature from fahrenheit to celsius.
+#+BEGIN_SRC java
+import java.util.Scanner;
+class Temp{
+        public static void main(String[] args){
+                Scanner scan = new Scanner(System.in);
+
+                // Reading value of fehrenheit from user
+                System.out.printf("Enter the value of fahrenheit[F]: ");
+                float fah = scan.nextFloat();
+
+                // Calculating
+                float cal = (fah-32)*5/9;
+
+                //output
+                System.out.println("Celsius : " + cal);
+
+            }
+    }
+#+END_SRC
+** Write a program to demostrate the use of arithmatic operators.
+#+BEGIN_SRC java
+import java.util.Scanner;
+class Arithmatic{
+        public static void main(String[] args){
+                Scanner scan = new Scanner(System.in);
+
+                System.out.print("Enter number[A]: ");
+                int a = scan.nextInt();
+                System.out.print("Enter number[B]: ");
+                int b = scan.nextInt();
+
+                System.out.println("Summation: " + (a+b));
+                System.out.println("Subtraction: " + (a-b));
+                System.out.println("Multiplication: " + (a*b));
+                System.out.println("Division: " + (a/b));
+                System.out.println("Modulus: " + (a%b));
+            }
+    }
+#+END_SRC
+** Write a program to demostrate the use of relational operators
+#+BEGIN_SRC java
+import java.util.Scanner;
+class Relational{
+        public static void main(String[] args){
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Enter number[A]: ");
+                int a = scan.nextInt();
+                System.out.println("Enter number[B]: ");
+                int b = scan.nextInt();
+                System.out.println("Enter number[C]: ");
+                int c = scan.nextInt();
+
+                if((a < b) && (a < c)){
+                        System.out.println("A is smaller than B and C");
+                    }
+                else if((a > b) && (a > c)){
+                        System.out.println("A is bigger than B and C");
+                    }
+                else if((a == b) && (a == c)){
+                        System.out.println("A is equal to B and C");
+                    }
+                else if((b < a) && (b < c)){
+                        System.out.println("B is smaller than A and C");
+                    }
+                else if((b > a) && (b > c)){
+                        System.out.println("B is bigger than A and C");
+                    }
+                else if((b == a) && (b == c)){
+                        System.out.println("B is equal to A and C");
+                    }
+                else if((c < b) && (c < a)){
+                        System.out.println("C is samller than A and B");
+                    }
+                else if((c > b) && (c > a)){
+                        System.out.println("C is bigger than A and B");
+                    }
+                else if((c == b) && (c == a)){
+                        System.out.println("C is equal to A and B");
+                    }
+                else{
+                        System.out.println("N/A");
+                    }
+    }
+#+END_SRC
