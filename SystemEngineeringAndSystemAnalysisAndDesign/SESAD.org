@@ -98,6 +98,35 @@ It includes text, audio and video conferencing.
 *** Electronic data exchange
 It allows business information to be transferred witout using paper.
 ** Network Hardware
+Network hardware is defined as a collection of physical network components to establish a network area.
+Hardware components are.
+- Transmission media which include Guided media like twisted pair, coaxial cable and fiber optic cable unguided media like radio wave, microwave and infrared.
+- Servers
+- Workstation / clients / Nodes / Terminals
+- Connectors
+- NIC (Network Interface Card)
+- Modem
+- Networking and internetworking devices like repeaters, Hub, Bridge, Switch, Router, Gateway.
+** Defination of Protocol
+Protocol is a set of rules that manages all aspects of data communication. It represents an agreement between the communication devices. Without a protocol, two devices may be connected but not communicating.
+A protocol defines what is communicated, how it is communicated and when it is communicated.
+*** Key Element of Protocol are
+**** Syntax:
+Syntax refers to the formate of the data or structure of data syntax tells us the order in which data are presented.
+**** Sementics:
+Sementics refers to the meaning of each section of bits, how particular pattern to be represented is and what action is to be taken based on that presentation.
+**** Timing:
+Timing refers to the characteristics
+- When data should be sent
+- How fast they can sent
+*** Examples of protcols
+- SMTP (Simple Mail Transfer Protocol)
+- POP (Post Office Protocol)
+- TCP (Transmission Control Protocol)
+- UDP (User Datagram Protocol)
+- IP (Internet Protocol)
+
+
 * Structured Analysis
 ** Levels of DFD
 *** 0 Level DFD
