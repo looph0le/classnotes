@@ -126,9 +126,13 @@ Timing refers to the characteristics
 - UDP (User Datagram Protocol)
 - IP (Internet Protocol)
 
-
 * Structured Analysis
 ** Levels of DFD
 *** 0 Level DFD
 *** 1 Level DFD
 *** 2 Level DFD
+* System Analysis and Design
+** What is system analysis and design?
+Systems are created to solve problems. Think of a systems approach as an way of organized way of dealing with problems.
+System analysis and design mainly deals with software developement activities.
+** Defining a system?
