@@ -1,0 +1,74 @@
+#+TITLE: Practical 2 : Basic Unix Commands
+
+* Aim : To study and implement basic unix commands.
+* Theory :
+** date
+Prints or set system date and time
+Syntax:
+    date [OPTIONS] [+FORMATE]
+
+Options:
+    -d, Display time described in string
+
+Output:
+    Thu Dec 30 5:13:55 PM IST 2021
+
+** cal
+display calender
+Syntax:
+    cal [OPTIONS] [[day]month]year]
+
+Options:
+    -1, Display single month output
+    -3, Display three month spanning the date
+    -n, Display number of months
+    -s, Display sunday as the first day of the week
+    -m, Display Monday as the first day of the week
+    -y, Display a calender for the whole year
+    -w, Display week number in the calendar
+
+Output:
+        December 2021
+Su Mo Tu We Th Fr Sa
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30 31
+
+** man
+An interface to the system reference manual
+Syntax:
+    man [man options] [[section] page ...]
+
+Options:
+    man ls, Display the manual page of the item program (ls)
+
+** who
+shows who is logged on
+Syntax:
+    who[OPTIONS]...[FILE | ARG1 ARG2]
+
+Options:
+    -a, print all information
+    -b, time of last system boot
+    -d, print dead processes
+    -l, print system login processes
+    -q, all login names and number of users logged on
+    -s, print only name, line, and time (default)
+** whoami
+prints username of the current user
+** echo
+display a line of text
+** printf
+formates and print data
+** tput
+initialize a terminal or query terminfo database
+** tty
+prints the filename of the terminal connected to standard input
+** bc
+bc utility implements an arbitrary precision calculator
+** expr
+evaluates arithmatic expressions.
+** uname
+prints system information
