@@ -232,8 +232,45 @@ However only the computer that has the address matching the address in the singl
 only one computer at a time can send message.
 
 **** Star topology
+Each device has a dedicated point to point link only to a central controller usually called HUB.
+Devices are not directly linked to each other.
+A star topology does not allow direct traffic between devices.
+A controller acts as an exchange, if any device want to send a data to another it sends the data to the controller, which they relay the data to otheer connected device.
+***** Advantages
+- Easy to modify and add new computer to a star topology network without disturbing the rest of the network.
+- The is a central point, controller or HUB in star network, it is easier to diagnose network problems.
+- Single computers fails does not bring down the whole network.
+***** Disadantages
+- Central HUB failure brings down the whole network.
+- More cables required compared to BUS topology.
+- More expensive compared to BUS topology
 **** Ring topology
+Computers are connected on single circle of cable. There are no terminated ends.
+A signal is passed along the ring in one direction from device to device until it reaches the destination.
+Each device in ring /incorporates repeaters./
+When a device recieves a signal intended for another device, it repeates regenerate the bits and passes them along.
+The network uses *token passing method* for transferring data.
+A short message called a *token* is passes around the ring until a computer needs to send data to another computer.
+Sending computer modifies the token, adds electronics address and data and sends it around the ring.
+***** Advantages
+- 100% efficiency under conditions to heavy load
+- Network allow equal access to all computers.
+***** Disadvantages
+- Failure of one computer in ring affects the network
+- Adding and removing computer disturbs the network.
+- Difficult to troubleshoot
 **** Mesh topology
+Every device has a dedicated point-to-point link to every other device.
+The term dedicated means that the link carries traffic only between the two devices it connects.
+***** Advantages
+- The use if dedicated links gurantee data transfer, illiminaing the traffic problem.
+- Provides privacy or security means while every message travels along a dedicated line.
+- Makes fault identification easy
+- Robust, unstable links between does not incapicate the entire system.
+***** Disadvantages
+- More cables and more numbers of I/O ports are required.
+- Installation and reconfiguration are difficult because every device must be connected to every other device.
+- Hardware required to connect each link can be expensive.
 **** Tree topology
 *** Categories of network
 Network classify according to their geographical size.
