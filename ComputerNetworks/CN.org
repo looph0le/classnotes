@@ -281,3 +281,22 @@ LAN tends to use only one type of transmission medium was cabling.
 ***** Characteristics of LAN
 ***** Advantages of LAN
 **** MAN
+* Types of Communication
+Based on whether the given communication system communicates only in one direction only or in both the directions, the communicating systems are classified as:
+** Simplex System
+In these system, the information is communicated in *only one direction*.
+Example:
+    TV broadcasting systems
+Keyboards and traditional monitors are example of simplex devices.
+** Half Duplex Systems
+These are bi-directional systems, they can transmit as well as receive but not simultaneouly.
+At a time these systems can either transmit or receive.
+Example:
+    transreceiver or walky talky
+The direction of communcation will keep changing itself
+In half duplex transmission, the entire capacity of the channel is utilized by the transmitting(Sending) system.
+** Full Duplex System
+These are truly bi-directional systems as they allow the communication to take place in both the directions simultaneously.
+These systems can transmit as well as receive simultaneously.
+Example:
+    Telephone system.
