@@ -1,0 +1,108 @@
+#+TITLE: Practical 3 : Control Statement and Array
+
+* Aim : To implement the program demonstrating the use of control statements and arrays.
+* Theory:
+** Java Selection Statment.
+   In java, the selection statements are also known as decision making statements or branching statement or conditional control statments. The selection statement are used to select a part of the program to be executed based on a condition.
+*** If statement
+    In java, we use if statement to test a condition out of two block based on that condition result.
+    Syntax:
+    #+BEGIN_SRC java
+if(condition){
+    code block;
+    }
+    #+END_SRC
+*** if-else statment
+In java, we use the if-else statement to test a condition and pick the execution of a block of statement out of two blocks based on that condition itself.
+Syntax:
+#+BEGIN_SRC java
+if(condition){
+    true block;
+}
+else{
+    false block;
+}
+#+END_SRC
+*** Nested-if statment
+Writing an if statement inside another if-statement is called /nested if statement/.
+Syntax:
+#+BEGIN_SRC java
+if(condition 1){
+    if(condition 2){
+    inner block;
+    }
+}
+#+END_SRC
+*** if-else-if statement
+Writing an if statement inside else of an if statment.
+Syntax:
+#+BEGIN_SRC java
+if(condition 1){
+    code block;
+}
+else if(condition 2){
+    code block 2;
+}
+#+END_SRC
+*** Switch statement 
+Using the switch statment, one can select only one option from more number of options easily.
+#+BEGIN_SRC java
+switch(expression or value){
+        case val1:
+            statement;
+        case val2:
+            statement;
+        case val3:
+            statement;
+        default:
+            statement;
+    }
+#+END_SRC
+*** Iteration Statement
+The java programming language provides a set of iterative statements that are used to execute a statement or a block of statement repeatedly as long as the given condition is true.
+**** While statmenet
+While statement is used to execute a single statement or block of statments repeatedly as long as the given condition is true.
+Syntax:
+#+BEGIN_SRC java
+while(boolean-expression){
+        block of code;
+    }
+#+END_SRC
+**** do-while statement
+The do-while statement is used to execute a single statement or block of statement repeatedly as long as given the condition is true.
+Syntax:
+#+BEGIN_SRC java
+do{
+        block of statement;
+    }
+while(boolean-expression){
+        statement;
+    }
+#+END_SRC
+**** for statement
+
+**** for-each statement
+
+*** Jump statement
+
+** Array
+
+*** 1D array
+
+*** Multi-Dimentional array
+** Programs:
+*** WAJP to check and display whether a given year is a leap year or not. if-else statement.
+*** WAJP that takes height and weight of five peoples, Display the count of persons having weight greater than 50 and height less than 170cm.
+*** WAJP that finds largest if three numbers.
+*** WAJP to display multiplication table of 1 to 10 number in a column formate(for loop).
+*** WAJP to display multiplication table of 1 to 10 number in a column formate(do-while loop).
+*** WAJP to create following patterns:
+    1.
+        1
+        2 3
+        4 5 6
+    2.
+        1 0 0
+        0 1 0
+        0 0 1
+*** WAJP to print fibonacci series upto 1 to 50
