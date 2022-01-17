@@ -1,0 +1,4 @@
+#+TITLE: Assignment 1 : Introduction to Operating Systems
+
+* Define Operating system. State the goals of operating system.
+An operating system is the software that manages the computer's hardware and provides a convinient and safe environment for running programs. It acts as an interface programs and the hardware resources and
