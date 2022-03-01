@@ -1,0 +1,38 @@
+#+TITLE: Introduction
+#+HTML_HEAD: <link rel="stylesheet" href="https://sandyuraz.com/styles/org.css">
+
+
+* Getting Started
+** What Is An Operating System
+A operating system is the software that manages the computer's hardware and provides a convenient and safe environment for running programs.
+It acts as an interface between programs and the hardware resources that these programs access (like memory, hard disk and printer).
+It is loaded into memory when a computer is booted and remains active as long as the machine is up.
+
+** Key Features Of An Operating System
++ The operating System allocates memory for the program and load the program to the allocated memory.
+  
++ It also loads the CPU registers with control information related to the programs. The registers maintain the memory locations where each segment of a program is stored.
+  
++ The instructions provided in the program are executed by the CPU. The operating System keeps track the instructions that was last executed.
+  That enables it to resume a program if it had to be taken out of the CPU before it completed execution.
+  
++ If the program needs to access hardware, it makes a call to the Operating System rather than attempts to do the job itself.
+  For instance, if the program needs to read a file on disk, the operating system directs the disk controller to open the file and make the data available to the program.
+  
++ After the program has completed execution, the operating System cleans up the memory and registers and makes them available for the next
+
+** More About Operating Systems
+Modern Operating Systems are multiprogramming, they allow multiple programs to be in memory.
+
+
+An Operating System generally allows a program to run for small instant of time, save its current state and then load the next program in the queue.
+The Operating System creates a process for each program and the control the switching of these processes.
+
+
+An Operating System may process its task /serially/ (Sequentially) or /concurrently/ (several tasks simultaneously).
+This means that the resources of the computer system may be dedicated to a single program until its completion or they may be allocated among several programs
+in different stages of execution.
+
+
+The feature of an OS to execute multiple programs in inter leaved fashion or different time cycle is known as *multiprogramming*.
+

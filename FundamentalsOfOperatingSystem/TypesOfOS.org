@@ -1,0 +1,70 @@
+#+TITLE: Types Of Operating Systems
+#+HTML_HEAD: <link rel="stylesheet" href="https://sandyuraz.com/styles/org.css">
+
+* Serial Processing
+In Serial Processing, the programs were executed /strictly/ in a serial manner /one after another/.
+** Advantages Of Serial Processing
++ Serial Processing resulted in a big improvement over the /'bare machine'/.
++ In Serial Processing, the OS was limited to only a loader and some I/O devices.
+** Disadvantages of Serial Processing
++ The process of development and preparation of a program in such an environment is shown as cumbersome due to serial processing and numerous manual processing.
++ At a time, only a small subject of resources could be used, so, there was poor utilization of system resources.
+
+* Batch Processing
+To speed up the processing, the jobs with similar needs were batched together and were run through the computer as a group.
+
+
+Batching similar jobs increased the system resources utilization a bit but there were still some problems.
+To overcome the idle state of CPU, A small program called a *Resident Monitor* was created which is always resident in the memory.
+It would automatically sequence the execution of jobs one after the other.
+
+
+It acts as per the programmer's directives given through control cards which certain information like making of job's beginnings and endings, Commands for loading and execution of programs etc.
+
+
+These commands belong to job control language. There jobs control language commands are included with use of programs and data.
+** Advantages Of Batch Processing
++ Batch processing is particularly useful for operations that require the computer or a peripheral device for an extended period of time and verly little use interaction.
++ For batched jobs, the common housekeeping operations, like loading of compiler, were performed only once. Thus, overhead per program got reduced which improved the system utilization.
++ It was with his concept only the job scheduling also started.
+** Disadvantages of Batch Processing
++ No interaction is possible with user while the program is being executed.
++ The job setup time for its processing also took lot of time as the tapes/cards need to be mounted.
++ CPU sat idle during the transition from one job to another.
++ Debugging was feasible only offline and it used to be very time-consuming.
++ At any time, it use to dedicate all the system resources to a single program being oscillate between computation phase and I/O phase.
+  So, at a time, either CPU will be busy or I/O will be busy. Thus, degree of resource utilization was very low thereby lowering system throughtput.
+
+* MultiProgramming
+Multiprogramming is a technique to execute number of programs simultaneously by a single processor. Buffering and spooling improves system performance by overlapping the input, output and computation of a single job, but both have their limitations. To increase the resource utilization system supporting one job(program) to utilize CPU time at any moment.
+
+
+*NOTE*: More the number of programs competing for system resources better will be the resource utilization.
+
+
+The Operating System could support for keeping several jobs in the main memory at one time. The OS could pick and start the execution of one of the jobs in the main memory.
+When ever the jobs does not need CPU (i.e the job has to do I/O only) and so the CPU is idle at that time then the OS switches to another job in the memory and CPU executes a portion of it till this job issues a request for I/O or the first one has finished its I/O and so on.
+Let Us consider an example, say, there are two programs, P1 and P2 that are residing in the main memory. The OS picks one of the program and starts executing it.
+During execution, say, P1 needs some 50 operations to complete.
+Then in a sequential environment is that the CPU would sit idle.
+
+One the other hand, in a multiprogramming system, the OS will simply switch over to the next program(P2)
+If P1 is busy with some I/O then it switches to P2.
+Similarly, If P2 wants to do some I/O then it switches to P3. This goes on and on.
+
+*NOTE*: If there is no other program after P3, then the CPU will pass its control back to previous programs.
+
+
+Another point to note here is that the OS in this case had to be very complex in the sense that now more serious memory management is required. Switching from one job to another is also not very easy.
+
+** Advantages Of Multiprogramming
++ High CPU utilization as it is never idle.
++ Supports multiple simultaneous interactive user(terminals)
++ Efficient memory utilization.
++ More CPU throughput.
+
+** Disadvantages Of Multiprogramming
++ Jobs may have different sizes, so some powerful memory management policy is designed to accommodate them in memory.
++ CPU sheduling is most because now many jobs are ready to be run on the CPU.
++ The use cannot interact with the job when it is being executed.
++ The programmer cannot modify a program to study its behavious while the program is being executed.
