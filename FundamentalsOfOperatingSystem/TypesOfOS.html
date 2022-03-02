@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-01 Tue 17:19 -->
+<!-- 2022-03-02 Wed 10:19 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Types Of Operating Systems</title>
@@ -224,37 +224,44 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7779f59">1. Serial Processing</a>
+<li><a href="#orgcd94ac5">1. Serial Processing</a>
 <ul>
-<li><a href="#org1d9b777">1.1. Advantages Of Serial Processing</a></li>
-<li><a href="#org6350322">1.2. Disadvantages of Serial Processing</a></li>
+<li><a href="#org2ef77c3">1.1. Advantages Of Serial Processing</a></li>
+<li><a href="#orgd63f581">1.2. Disadvantages of Serial Processing</a></li>
 </ul>
 </li>
-<li><a href="#orgda581ce">2. Batch Processing</a>
+<li><a href="#orgebb942f">2. Batch Processing</a>
 <ul>
-<li><a href="#orgff93d0a">2.1. Advantages Of Batch Processing</a></li>
-<li><a href="#orga7127b1">2.2. Disadvantages of Batch Processing</a></li>
+<li><a href="#org6290416">2.1. Advantages Of Batch Processing</a></li>
+<li><a href="#org8f28756">2.2. Disadvantages of Batch Processing</a></li>
 </ul>
 </li>
-<li><a href="#org38642a2">3. MultiProgramming</a>
+<li><a href="#org4af4e87">3. MultiProgramming</a>
 <ul>
-<li><a href="#org4aedff3">3.1. Advantages Of Multiprogramming</a></li>
-<li><a href="#org7dd8ab9">3.2. Disadvantages Of Multiprogramming</a></li>
+<li><a href="#org305fa5c">3.1. Advantages Of Multiprogramming</a></li>
+<li><a href="#org2dd0d5f">3.2. Disadvantages Of Multiprogramming</a></li>
 </ul>
 </li>
+<li><a href="#org0769c16">4. Multiprocessing</a>
+<ul>
+<li><a href="#orge7eb8c2">4.1. Symmetric Multiprocessor System</a></li>
+<li><a href="#orgea5af1b">4.2. Asymmetric Multiprocessor System</a></li>
+</ul>
+</li>
+<li><a href="#org3c1127e">5. Time-Sharing Systems</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7779f59" class="outline-2">
-<h2 id="org7779f59"><span class="section-number-2">1</span> Serial Processing</h2>
+<div id="outline-container-orgcd94ac5" class="outline-2">
+<h2 id="orgcd94ac5"><span class="section-number-2">1</span> Serial Processing</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 In Serial Processing, the programs were executed <i>strictly</i> in a serial manner <i>one after another</i>.
 </p>
 </div>
-<div id="outline-container-org1d9b777" class="outline-3">
-<h3 id="org1d9b777"><span class="section-number-3">1.1</span> Advantages Of Serial Processing</h3>
+<div id="outline-container-org2ef77c3" class="outline-3">
+<h3 id="org2ef77c3"><span class="section-number-3">1.1</span> Advantages Of Serial Processing</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>Serial Processing resulted in a big improvement over the <i>'bare machine'</i>.</li>
@@ -262,8 +269,9 @@ In Serial Processing, the programs were executed <i>strictly</i> in a serial man
 </ul>
 </div>
 </div>
-<div id="outline-container-org6350322" class="outline-3">
-<h3 id="org6350322"><span class="section-number-3">1.2</span> Disadvantages of Serial Processing</h3>
+
+<div id="outline-container-orgd63f581" class="outline-3">
+<h3 id="orgd63f581"><span class="section-number-3">1.2</span> Disadvantages of Serial Processing</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>The process of development and preparation of a program in such an environment is shown as cumbersome due to serial processing and numerous manual processing.</li>
@@ -273,8 +281,8 @@ In Serial Processing, the programs were executed <i>strictly</i> in a serial man
 </div>
 </div>
 
-<div id="outline-container-orgda581ce" class="outline-2">
-<h2 id="orgda581ce"><span class="section-number-2">2</span> Batch Processing</h2>
+<div id="outline-container-orgebb942f" class="outline-2">
+<h2 id="orgebb942f"><span class="section-number-2">2</span> Batch Processing</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 To speed up the processing, the jobs with similar needs were batched together and were run through the computer as a group.
@@ -297,8 +305,8 @@ It acts as per the programmer's directives given through control cards which cer
 These commands belong to job control language. There jobs control language commands are included with use of programs and data.
 </p>
 </div>
-<div id="outline-container-orgff93d0a" class="outline-3">
-<h3 id="orgff93d0a"><span class="section-number-3">2.1</span> Advantages Of Batch Processing</h3>
+<div id="outline-container-org6290416" class="outline-3">
+<h3 id="org6290416"><span class="section-number-3">2.1</span> Advantages Of Batch Processing</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Batch processing is particularly useful for operations that require the computer or a peripheral device for an extended period of time and verly little use interaction.</li>
@@ -307,8 +315,8 @@ These commands belong to job control language. There jobs control language comma
 </ul>
 </div>
 </div>
-<div id="outline-container-orga7127b1" class="outline-3">
-<h3 id="orga7127b1"><span class="section-number-3">2.2</span> Disadvantages of Batch Processing</h3>
+<div id="outline-container-org8f28756" class="outline-3">
+<h3 id="org8f28756"><span class="section-number-3">2.2</span> Disadvantages of Batch Processing</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li>No interaction is possible with user while the program is being executed.</li>
@@ -322,8 +330,9 @@ So, at a time, either CPU will be busy or I/O will be busy. Thus, degree of reso
 </div>
 </div>
 
-<div id="outline-container-org38642a2" class="outline-2">
-<h2 id="org38642a2"><span class="section-number-2">3</span> MultiProgramming</h2>
+
+<div id="outline-container-org4af4e87" class="outline-2">
+<h2 id="org4af4e87"><span class="section-number-2">3</span> MultiProgramming</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Multiprogramming is a technique to execute number of programs simultaneously by a single processor. Buffering and spooling improves system performance by overlapping the input, output and computation of a single job, but both have their limitations. To increase the resource utilization system supporting one job(program) to utilize CPU time at any moment.
@@ -359,8 +368,8 @@ Another point to note here is that the OS in this case had to be very complex in
 </p>
 </div>
 
-<div id="outline-container-org4aedff3" class="outline-3">
-<h3 id="org4aedff3"><span class="section-number-3">3.1</span> Advantages Of Multiprogramming</h3>
+<div id="outline-container-org305fa5c" class="outline-3">
+<h3 id="org305fa5c"><span class="section-number-3">3.1</span> Advantages Of Multiprogramming</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>High CPU utilization as it is never idle.</li>
@@ -371,8 +380,8 @@ Another point to note here is that the OS in this case had to be very complex in
 </div>
 </div>
 
-<div id="outline-container-org7dd8ab9" class="outline-3">
-<h3 id="org7dd8ab9"><span class="section-number-3">3.2</span> Disadvantages Of Multiprogramming</h3>
+<div id="outline-container-org2dd0d5f" class="outline-3">
+<h3 id="org2dd0d5f"><span class="section-number-3">3.2</span> Disadvantages Of Multiprogramming</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>Jobs may have different sizes, so some powerful memory management policy is designed to accommodate them in memory.</li>
@@ -383,10 +392,46 @@ Another point to note here is that the OS in this case had to be very complex in
 </div>
 </div>
 </div>
+
+
+<div id="outline-container-org0769c16" class="outline-2">
+<h2 id="org0769c16"><span class="section-number-2">4</span> Multiprocessing</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+If one CPU cannot handle a system's work load then one possible solution is to apply multiple processors to the problem. This is called <b>multiprocessing environment</b>.
+We can opt for multiprocessing if we find that the workload is CPU limited and has already saturated a uniprocessor system or we find that our problem involves those calculations which can be solved more easily with multiprocessors.
+There are two types of multiprocessing systems.
+</p>
+</div>
+
+<div id="outline-container-orge7eb8c2" class="outline-3">
+<h3 id="orge7eb8c2"><span class="section-number-3">4.1</span> Symmetric Multiprocessor System</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+All CPU are essentially identical and perform identical functions. Any CPU can initiate an I/O operation or can handle any external interrupt and can run any process in the system. So, all the processors are potentially available.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgea5af1b" class="outline-3">
+<h3 id="orgea5af1b"><span class="section-number-3">4.2</span> Asymmetric Multiprocessor System</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Different Processors do different things. We may design in such a fashion that one processor is mode a supervisor or master and it controls other CPUs.
+One one hand, processing may be very fast as many processors may be available for a single job. On the other hand, processing may be slow because all the processors(CPU) may not be available to handle peak load. Also, If the supervisor CPU fails then the entire system will go down.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3c1127e" class="outline-2">
+<h2 id="org3c1127e"><span class="section-number-2">5</span> Time-Sharing Systems</h2>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: looph0le</p>
-<p class="date">Created: 2022-03-01 Tue 17:19</p>
+<p class="date">Created: 2022-03-02 Wed 10:19</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

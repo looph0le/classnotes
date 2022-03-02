@@ -6,6 +6,7 @@ In Serial Processing, the programs were executed /strictly/ in a serial manner /
 ** Advantages Of Serial Processing
 + Serial Processing resulted in a big improvement over the /'bare machine'/.
 + In Serial Processing, the OS was limited to only a loader and some I/O devices.
+
 ** Disadvantages of Serial Processing
 + The process of development and preparation of a program in such an environment is shown as cumbersome due to serial processing and numerous manual processing.
 + At a time, only a small subject of resources could be used, so, there was poor utilization of system resources.
@@ -35,6 +36,7 @@ These commands belong to job control language. There jobs control language comma
 + At any time, it use to dedicate all the system resources to a single program being oscillate between computation phase and I/O phase.
   So, at a time, either CPU will be busy or I/O will be busy. Thus, degree of resource utilization was very low thereby lowering system throughtput.
 
+  
 * MultiProgramming
 Multiprogramming is a technique to execute number of programs simultaneously by a single processor. Buffering and spooling improves system performance by overlapping the input, output and computation of a single job, but both have their limitations. To increase the resource utilization system supporting one job(program) to utilize CPU time at any moment.
 
@@ -68,3 +70,20 @@ Another point to note here is that the OS in this case had to be very complex in
 + CPU sheduling is most because now many jobs are ready to be run on the CPU.
 + The use cannot interact with the job when it is being executed.
 + The programmer cannot modify a program to study its behavious while the program is being executed.
+
+  
+* Multiprocessing
+If one CPU cannot handle a system's work load then one possible solution is to apply multiple processors to the problem. This is called *multiprocessing environment*.
+We can opt for multiprocessing if we find that the workload is CPU limited and has already saturated a uniprocessor system or we find that our problem involves those calculations which can be solved more easily with multiprocessors.
+There are two types of multiprocessing systems.
+
+** Symmetric Multiprocessor System
+All CPU are essentially identical and perform identical functions. Any CPU can initiate an I/O operation or can handle any external interrupt and can run any process in the system. So, all the processors are potentially available.
+
+** Asymmetric Multiprocessor System
+Different Processors do different things. We may design in such a fashion that one processor is mode a supervisor or master and it controls other CPUs.
+One one hand, processing may be very fast as many processors may be available for a single job. On the other hand, processing may be slow because all the processors(CPU) may not be available to handle peak load. Also, If the supervisor CPU fails then the entire system will go down.
+
+
+* Time-Sharing Systems
+
