@@ -1,0 +1,181 @@
+#+TITLE: System Design
+#+HTML_HEAD: <link href="https://taopeng.me/org-notes-style/css/notes.css" rel="stylesheet" type="text/css" />
+
+* Introduction
+*System Design* is the phase that bridges the gap between probelm domain and the existing system in a manageable way. This phase focuses on the solution domaini, i.e. /"How to implement?"/ It tells the approach to the creation of a new system. It provides the methods to implement the system given in the feasibility study.
+Emphasis is placed on transforming the performace requirements to design specifications. Design is done both logically and physically.
+
+
+System are created in order to meet the needs of the users. They are not only intended to solve the existing problem, but they also come up with acceptable soultions to the problem that may arise in the future.
+The whole process of system development, from blueprint to the actual product, involves considering all the relevant factors and taking the required specifications and creating a useful system based on strong technical, analytical and development skills of the professionals.
+
+
+Being another important step in the system development process, *system designing phase commences after the system analysis phase is completed*. It's appropriate to mention that the output or the specifications taken through the phase of system analysis become an input in the system design phase which in turn leads to workout based on the user defined estimations.
+
+
+The importance of this phase may be understood by reason of the fact that it involves identifying data sources, the nature and type of data that is available. For example, in order to design a salary system, there is a need for using inputs, such as, attendance, leave details, additions or deductions etc. This facilitates understanding what kind of data is available and by whome it is supplied to the system so that the system may be designed considering all the relevant factors. In addition, system designing leads to ensure that the system is created in such a way that is fulfils the need of the users and keep them at ease being user-oriented.
+
+
+In terms of flexibility, one of the main objectives of this phase is that it is intended to design such a system which can be dynamic in nature and responsive to the changes if required.
+
+
+Another important objective is that the phase of the system designing is concerned with creating the system which can work efficiently providing the required output and being responsive to the time within a given time limit.
+
+
+The aspect of reliability and physical security of data cannot be ignored. With this respect, the system design phase ensures security measures of the system effectively and efficiently.
+
+
+So, System design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. System design could be seen as the application of systems theory to product development.
+
+* Inputs to System Design
+System design takes the following inputs --
++ Statement of work
++ Requirement determination plan
++ Current situation analysis
++ Proposed system requirements including a conceptual data model, modified DFDs, and Metadata(data about data).
+
+* Outputs for System Design
+System design gives the following outputs --
++ Infrastructure and organizational changes for the proposed system.
++ A data scheme, often a relational schema.
++ Metadata to define the tables/files and columns/data-items.
++ A function hierarchy diagram or web page map that graphically describe the program structure.
++ Actual or pseudocode for each module in the program.
++ A prototype for the proposed system.
+
+* Process of System Design
+The design phase focuses on the detailed implementation of the system recommended in the feasibility study. The design phase is a transition from a user-oriented document to a document, oriented to the programmers or data base personnel.
+
+
+System design goes through two phases of development:
+** Logical Design
+The logical system design specifies the abstract representation of the data flow, inputs and outputs of the system. This is often conducted via modelling, using an over-abstract (and sometimes graphical) model of the actual system. Logical design included entity-relationship diagrams (ER diagrams.)
+
+
+The design covers the following:
+1. Reviews the current physical system -its data flow, file content, volumes, frequencies, etc.
+2. Prepares output specifications -- determines the formate, content, and frequency of reports, including terminal specifications and locations.
+3. Prepares input specifications -- formate, content, and most of the input functions. This includes determining the flow of the document from the input data source to the actual input location.
+4. Prepares edit, security and control specifications.
+5. Specifies the implementation plan.
+6. Prepares a logical design of the information flow, output, input, controls and implementation plan.
+7. Reviews benefits, costs, target dates and system constraints.
+** Physical Design
+The physical Design relates to the actual input and output processes of the system. This is explained in terms of how data is input into a system, how it is varified or authenticated, how it is processed, and how it is displayed. In physical design, the following requirements about the system are decided.
++ Input requirement
++ Output requirement
++ Storage requirement
++ Processing requirement
++ System control and backup or recovery
+
+Put another way, the physical portion of system design can generally be broken down into three sub-tasks:
+1. User Interface design
+2. Data Design
+3. Process Design
+
++ *User Interface Design* is concerned with how users add information to the system and with how the system presents information back to them.
++ *Data Design* is concerned with how the data is represented and stored within the system.
++ *Process Design* is concerned with how data moves through the system, and with how and where it is validated, secured and/or transformed as it flows into, through and out of the system.
+
+
+Physical design, in this context, does not refer to the tangible physical design of an information system. It would not concern the actual layout of the tangible hardware, which for a PC would be a monitor, CPU, motherboard, hard drive, modems, video/graphics cards, USB slots, etc.
+It involves a detailed design of a user and a product database structure processor and a control processor.
+
+
+This produces the working system by defining the design specifications that tell programmers exactly what the candidate system must do. In turn the programmers write the necessary programs or modify the existing software package that gets the input and performs the necesarry actions on the existing file or database, and produces the report in hardcopy or display it on a screen, and update the database.
+
+
+Physical System design consists of the following steps:
+1. Design the physical System.
+   a. Specify input/output media.
+   b. Design the database and specify backup procedures.
+   c. Design Physical information flow through the system and a physical design walkthrough.
+2. Plan System implementaion
+   a. Prepare conversion schedule and a target date.
+   b. Determine training procedure, courses, and timetable.
+3. Devise a test and implementation plan and specify any new hardware/software.
+4. Update benefits, costs, conversion date, and system constraints.
+
+
+* Structured Design Methodology:
+Design methodologies aim at the following:
+- Improve productivity of the analysts and programmers.
+- Improve documentation
+- Cut down costs
+- Imporve communication among users, analysts, designers and the programmers.
+- Simplify the design by segmentation.
+
+* Design Strategies
+** Top-Down Strategy
+The top-down strategy uses the modular approach to develop the design of a system. It is called so because it *starts from the top or the highest-level module and moves towards the lowest level modules*.
+
+
+In this technique, the highest-level module or main module for developing the software is identified. The main module is divided into several smaller and simpler sub-modules or segments based on the task performed by each module. Then, each sub-module is further subdivided into several sub-modules continues until the lowest level modules, which cannot be further subdivided, are not identified.
+** Bottom-up strategy
+Bottom-up strategy follows the modular approach to develop the design of the system. It is called so because it starts from the bottom or the most basic level modules and moves towards the highest level modules.
+
+
+In this technique,
+- The modules at the most basic or the lowest level are identified.
+- These modules are then grouped together based on the function performed by each module to form the next higher-level modules.
+- Then, these modules are further combined to from the next higher-level modules.
+- This process of grouping several simpler modules to from higher level modules continues until the main module of system development process is achieved.
+** Structured Design
+Structured design is a data-flow based methodology that helps in identifying the input and output of the developing system. The main objective of structured design is to /minimize the complexity and increase the modularity of a program/. Structured design also helps in describing the functionality aspects of the system.
+
+
+In structured designing, the system specifications act as a basis of graphically representing the flow of data and sequence of processes involved in a software development with the help of DFDs. After developing the DFDs for the software system, the next step is to develop the structure chart.
+** Modularization
+Structured design partitions the program into small and independent modules. These are organized in top down manner with the details shown in bottom.
+Thus, structured design uses an approach called Modularization or decomposition to minimize the complexity and to manage the problem by subdividing it into smaller segments.
+
+** Advantages
+- Critical interface are tested first
+- It provides abstraction
+- It allows multiple programmers to work simultaneously
+- It allows code resue.
+- It provides control and improves morale.
+- It makes identifying structure easier.
+
+** Structured Charts
+Structured charts are a recommended tool for designing a modular, top down system which define the various modules of system development and the relationship between each module. It shows the system modules and their relationship between them.
+
+
+It consists of diagram consisting of rectangular boxes that represent the modules, connecting arrows, or lines.
+
++ *Contol Module* -- It is a higher-level module that directs lower-level modules, called subordinate modules.
++ *Library Module* -- It is a reusable module and can be invoked from more than one point in the chart.
+
+We have two different approaches to design a structured chart --
++ *Transform-Centered Structured Charts* - are used when all the transactions follow same path.
++ *Transaction-Centered Structured Charts* - are used when all the transactions do not follow the same path.
+
+** Objective of Using Structure Flowcharts
++ To encourage a top-down design
++ To support the concept of modules and identify the appropriate modules.
++ To show the size and complexity of the system.
++ To identify the number of readily identifiable functions and modules within each function.
++ To depict whether each identifiable function is a manageable or should be broken down into smaller components.
+
+* Factors Affecting System Complexity
+To develop good quality of system software, it is necessary to develop a good design. Therefore, the main focus on while developing the design of the system is the quality of the software design. A good quality software design is the one, which minimizes the complexity and cost expenditure in software development.
+The two important concepts related to the system development that helps in determining the complexity of a system are *coupling* and *cohesion*.
+** Coupling
+Coupling is the measure of the independence of components. It defines the degree of dependency of each modules of system development on the other. In practise, this means the stronger the coupling between the modules in a system, the more difficult it is to implement and maintain the system. Each module should have simple, clean interface with other modules, and that the minimum number of data elements should be shared between modules.
+*** High Coupling
+If the program units are highly dependent on each other and changes to one subsystem leads to high impact on the other subsystem.
+*** Low Coupling
+When system are made up of components which are independent or almost independent, a change in one subsystem does not affect any other subsystem.
+*** Coupling Measures
+- Content Coupling -- When one component actually modifies another, then the modified component is completely dependent on modifying one.
+- Common Coupling -- When amount of coupling is reduced somewhat by organizing system design so that data are accessible from a common data store.
+- Control Coupling -- When one component passes parameters to control the activity of another component.
+- Stamp Coupling -- When data structures is used to pass information form one component to another.
+- Data Couping -- When only data is passed then components are connected by this coupling.
+** Cohesion
+Cohesion is the measure of closeness of the relationship between its components. It defines the amount of dependency of the components of a module on one another. In practice, this means the system designer must ensure that --
++ They do not split essential processes into fragmented modules.
++ They do not gather together unrealted processes represented as processes on the DFD into meaningless modules.
+
+The best modules are those that are functionally cohesive. The worst modules are those that are coincidentally cohesive.
+

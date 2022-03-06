@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-03-06 Sun 17:18 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>System Design</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="looph0le" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href="https://taopeng.me/org-notes-style/css/notes.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">System Design</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org710e1a0">1. Introduction</a></li>
+<li><a href="#orga82e7f6">2. Inputs to System Design</a></li>
+<li><a href="#orgcc13d8a">3. Outputs for System Design</a></li>
+<li><a href="#org2610ffa">4. Process of System Design</a>
+<ul>
+<li><a href="#org839f6bd">4.1. Logical Design</a></li>
+<li><a href="#org9ab775e">4.2. Physical Design</a></li>
+</ul>
+</li>
+<li><a href="#org2387a7d">5. Structured Design Methodology:</a></li>
+<li><a href="#org2e347a3">6. Design Strategies</a>
+<ul>
+<li><a href="#org5f9ebf6">6.1. Top-Down Strategy</a></li>
+<li><a href="#org6fad6d3">6.2. Bottom-up strategy</a></li>
+<li><a href="#org8c44d1d">6.3. Structured Design</a></li>
+<li><a href="#orgdf0b0d2">6.4. Modularization</a></li>
+<li><a href="#org3d436ac">6.5. Advantages</a></li>
+<li><a href="#org125e424">6.6. Structured Charts</a></li>
+<li><a href="#org6466497">6.7. Objective of Using Structure Flowcharts</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org710e1a0" class="outline-2">
+<h2 id="org710e1a0"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<b>System Design</b> is the phase that bridges the gap between probelm domain and the existing system in a manageable way. This phase focuses on the solution domaini, i.e. <i>"How to implement?"</i> It tells the approach to the creation of a new system. It provides the methods to implement the system given in the feasibility study.
+Emphasis is placed on transforming the performace requirements to design specifications. Design is done both logically and physically.
+</p>
+
+
+<p>
+System are created in order to meet the needs of the users. They are not only intended to solve the existing problem, but they also come up with acceptable soultions to the problem that may arise in the future.
+The whole process of system development, from blueprint to the actual product, involves considering all the relevant factors and taking the required specifications and creating a useful system based on strong technical, analytical and development skills of the professionals.
+</p>
+
+
+<p>
+Being another important step in the system development process, <b>system designing phase commences after the system analysis phase is completed</b>. It's appropriate to mention that the output or the specifications taken through the phase of system analysis become an input in the system design phase which in turn leads to workout based on the user defined estimations.
+</p>
+
+
+<p>
+The importance of this phase may be understood by reason of the fact that it involves identifying data sources, the nature and type of data that is available. For example, in order to design a salary system, there is a need for using inputs, such as, attendance, leave details, additions or deductions etc. This facilitates understanding what kind of data is available and by whome it is supplied to the system so that the system may be designed considering all the relevant factors. In addition, system designing leads to ensure that the system is created in such a way that is fulfils the need of the users and keep them at ease being user-oriented.
+</p>
+
+
+<p>
+In terms of flexibility, one of the main objectives of this phase is that it is intended to design such a system which can be dynamic in nature and responsive to the changes if required.
+</p>
+
+
+<p>
+Another important objective is that the phase of the system designing is concerned with creating the system which can work efficiently providing the required output and being responsive to the time within a given time limit.
+</p>
+
+
+<p>
+The aspect of reliability and physical security of data cannot be ignored. With this respect, the system design phase ensures security measures of the system effectively and efficiently.
+</p>
+
+
+<p>
+So, System design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. System design could be seen as the application of systems theory to product development.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga82e7f6" class="outline-2">
+<h2 id="orga82e7f6"><span class="section-number-2">2</span> Inputs to System Design</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+System design takes the following inputs &#x2013;
+</p>
+<ul class="org-ul">
+<li>Statement of work</li>
+<li>Requirement determination plan</li>
+<li>Current situation analysis</li>
+<li>Proposed system requirements including a conceptual data model, modified DFDs, and Metadata(data about data).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcc13d8a" class="outline-2">
+<h2 id="orgcc13d8a"><span class="section-number-2">3</span> Outputs for System Design</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+System design gives the following outputs &#x2013;
+</p>
+<ul class="org-ul">
+<li>Infrastructure and organizational changes for the proposed system.</li>
+<li>A data scheme, often a relational schema.</li>
+<li>Metadata to define the tables/files and columns/data-items.</li>
+<li>A function hierarchy diagram or web page map that graphically describe the program structure.</li>
+<li>Actual or pseudocode for each module in the program.</li>
+<li>A prototype for the proposed system.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2610ffa" class="outline-2">
+<h2 id="org2610ffa"><span class="section-number-2">4</span> Process of System Design</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+The design phase focuses on the detailed implementation of the system recommended in the feasibility study. The design phase is a transition from a user-oriented document to a document, oriented to the programmers or data base personnel.
+</p>
+
+
+<p>
+System design goes through two phases of development:
+</p>
+</div>
+<div id="outline-container-org839f6bd" class="outline-3">
+<h3 id="org839f6bd"><span class="section-number-3">4.1</span> Logical Design</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+The logical system design specifies the abstract representation of the data flow, inputs and outputs of the system. This is often conducted via modelling, using an over-abstract (and sometimes graphical) model of the actual system. Logical design included entity-relationship diagrams (ER diagrams.)
+</p>
+
+
+<p>
+The design covers the following:
+</p>
+<ol class="org-ol">
+<li>Reviews the current physical system -its data flow, file content, volumes, frequencies, etc.</li>
+<li>Prepares output specifications &#x2013; determines the formate, content, and frequency of reports, including terminal specifications and locations.</li>
+<li>Prepares input specifications &#x2013; formate, content, and most of the input functions. This includes determining the flow of the document from the input data source to the actual input location.</li>
+<li>Prepares edit, security and control specifications.</li>
+<li>Specifies the implementation plan.</li>
+<li>Prepares a logical design of the information flow, output, input, controls and implementation plan.</li>
+<li>Reviews benefits, costs, target dates and system constraints.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9ab775e" class="outline-3">
+<h3 id="org9ab775e"><span class="section-number-3">4.2</span> Physical Design</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+The physical Design relates to the actual input and output processes of the system. This is explained in terms of how data is input into a system, how it is varified or authenticated, how it is processed, and how it is displayed. In physical design, the following requirements about the system are decided.
+</p>
+<ul class="org-ul">
+<li>Input requirement</li>
+<li>Output requirement</li>
+<li>Storage requirement</li>
+<li>Processing requirement</li>
+<li>System control and backup or recovery</li>
+</ul>
+
+<p>
+Put another way, the physical portion of system design can generally be broken down into three sub-tasks:
+</p>
+<ol class="org-ol">
+<li>User Interface design</li>
+<li>Data Design</li>
+<li>Process Design</li>
+
+<li><b>User Interface Design</b> is concerned with how users add information to the system and with how the system presents information back to them.</li>
+<li><b>Data Design</b> is concerned with how the data is represented and stored within the system.</li>
+<li><b>Process Design</b> is concerned with how data moves through the system, and with how and where it is validated, secured and/or transformed as it flows into, through and out of the system.</li>
+</ol>
+
+
+<p>
+Physical design, in this context, does not refer to the tangible physical design of an information system. It would not concern the actual layout of the tangible hardware, which for a PC would be a monitor, CPU, motherboard, hard drive, modems, video/graphics cards, USB slots, etc.
+It involves a detailed design of a user and a product database structure processor and a control processor.
+</p>
+
+
+<p>
+This produces the working system by defining the design specifications that tell programmers exactly what the candidate system must do. In turn the programmers write the necessary programs or modify the existing software package that gets the input and performs the necesarry actions on the existing file or database, and produces the report in hardcopy or display it on a screen, and update the database.
+</p>
+
+
+<p>
+Physical System design consists of the following steps:
+</p>
+<ol class="org-ol">
+<li>Design the physical System.
+a. Specify input/output media.
+b. Design the database and specify backup procedures.
+c. Design Physical information flow through the system and a physical design walkthrough.</li>
+<li>Plan System implementaion
+a. Prepare conversion schedule and a target date.
+b. Determine training procedure, courses, and timetable.</li>
+<li>Devise a test and implementation plan and specify any new hardware/software.</li>
+<li>Update benefits, costs, conversion date, and system constraints.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2387a7d" class="outline-2">
+<h2 id="org2387a7d"><span class="section-number-2">5</span> Structured Design Methodology:</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Design methodologies aim at the following:
+</p>
+<ul class="org-ul">
+<li>Improve productivity of the analysts and programmers.</li>
+<li>Improve documentation</li>
+<li>Cut down costs</li>
+<li>Imporve communication among users, analysts, designers and the programmers.</li>
+<li>Simplify the design by segmentation.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2e347a3" class="outline-2">
+<h2 id="org2e347a3"><span class="section-number-2">6</span> Design Strategies</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org5f9ebf6" class="outline-3">
+<h3 id="org5f9ebf6"><span class="section-number-3">6.1</span> Top-Down Strategy</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+The top-down strategy uses the modular approach to develop the design of a system. It is called so because it <b>starts from the top or the highest-level module and moves towards the lowest level modules</b>.
+</p>
+
+
+<p>
+In this technique, the highest-level module or main module for developing the software is identified. The main module is divided into several smaller and simpler sub-modules or segments based on the task performed by each module. Then, each sub-module is further subdivided into several sub-modules continues until the lowest level modules, which cannot be further subdivided, are not identified.
+</p>
+</div>
+</div>
+<div id="outline-container-org6fad6d3" class="outline-3">
+<h3 id="org6fad6d3"><span class="section-number-3">6.2</span> Bottom-up strategy</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Bottom-up strategy follows the modular approach to develop the design of the system. It is called so because it starts from the bottom or the most basic level modules and moves towards the highest level modules.
+</p>
+
+
+<p>
+In this technique,
+</p>
+<ul class="org-ul">
+<li>The modules at the most basic or the lowest level are identified.</li>
+<li>These modules are then grouped together based on the function performed by each module to form the next higher-level modules.</li>
+<li>Then, these modules are further combined to from the next higher-level modules.</li>
+<li>This process of grouping several simpler modules to from higher level modules continues until the main module of system development process is achieved.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8c44d1d" class="outline-3">
+<h3 id="org8c44d1d"><span class="section-number-3">6.3</span> Structured Design</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+Structured design is a data-flow based methodology that helps in identifying the input and output of the developing system. The main objective of structured design is to <i>minimize the complexity and increase the modularity of a program</i>. Structured design also helps in describing the functionality aspects of the system.
+</p>
+
+
+<p>
+In structured designing, the system specifications act as a basis of graphically representing the flow of data and sequence of processes involved in a software development with the help of DFDs. After developing the DFDs for the software system, the next step is to develop the structure chart.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdf0b0d2" class="outline-3">
+<h3 id="orgdf0b0d2"><span class="section-number-3">6.4</span> Modularization</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+Structured design partitions the program into small and independent modules. These are organized in top down manner with the details shown in bottom.
+Thus, structured design uses an approach called Modularization or decomposition to minimize the complexity and to manage the problem by subdividing it into smaller segments.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3d436ac" class="outline-3">
+<h3 id="org3d436ac"><span class="section-number-3">6.5</span> Advantages</h3>
+<div class="outline-text-3" id="text-6-5">
+<ul class="org-ul">
+<li>Critical interface are tested first</li>
+<li>It provides abstraction</li>
+<li>It allows multiple programmers to work simultaneously</li>
+<li>It allows code resue.</li>
+<li>It provides control and improves morale.</li>
+<li>It makes identifying structure easier.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org125e424" class="outline-3">
+<h3 id="org125e424"><span class="section-number-3">6.6</span> Structured Charts</h3>
+<div class="outline-text-3" id="text-6-6">
+<p>
+Structured charts are a recommended tool for designing a modular, top down system which define the various modules of system development and the relationship between each module. It shows the system modules and their relationship between them.
+</p>
+
+
+<p>
+It consists of diagram consisting of rectangular boxes that represent the modules, connecting arrows, or lines.
+</p>
+
+<ul class="org-ul">
+<li><b>Contol Module</b> &#x2013; It is a higher-level module that directs lower-level modules, called subordinate modules.</li>
+<li><b>Library Module</b> &#x2013; It is a reusable module and can be invoked from more than one point in the chart.</li>
+</ul>
+
+<p>
+We have two different approaches to design a structured chart &#x2013;
+</p>
+<ul class="org-ul">
+<li><b>Transform-Centered Structured Charts</b> - are used when all the transactions follow same path.</li>
+<li><b>Transaction-Centered Structured Charts</b> - are used when all the transactions do not follow the same path.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6466497" class="outline-3">
+<h3 id="org6466497"><span class="section-number-3">6.7</span> Objective of Using Structure Flowcharts</h3>
+<div class="outline-text-3" id="text-6-7">
+<ul class="org-ul">
+<li>To encourage a top-down design</li>
+<li>To support the concept of modules and identify the appropriate modules.</li>
+<li>To show the size and complexity of the system.</li>
+<li>To identify the number of readily identifiable functions and modules within each function.</li>
+<li>To depict whether each identifiable function is a manageable or should be broken down into smaller components.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: looph0le</p>
+<p class="date">Created: 2022-03-06 Sun 17:18</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
