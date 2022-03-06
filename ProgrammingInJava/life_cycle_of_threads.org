@@ -1,0 +1,10 @@
+#+TITLE: Life Cycle Of thread 
+
+* Mulltithreaded Programming
+A multithreaded program contains two or more parts that can run concurrently. Each part of such a program is called a *Thread*., and each thread defines a separate path of execution.
+Thus, multithreading is a specialized form of multitasking.
+** Process-based
+Multitasking is the feature that allows your computer to run two or more programs concurrently.
+** Thread-based
+In a thread-based multitasking environment, the thread is the smallest unit of dispatchable code.
+This means that a single program can perform two or more tasks simultaneously.

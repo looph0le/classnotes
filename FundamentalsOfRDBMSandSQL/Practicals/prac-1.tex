@@ -1,0 +1,146 @@
+% Created 2022-03-03 Thu 17:19
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{looph0le}
+\date{\today}
+\title{Practical 1}
+\hypersetup{
+ pdfauthor={looph0le},
+ pdftitle={Practical 1},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.2 (Org mode 9.4.4)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Aim}
+\label{sec:orge15c5b7}
+Introduction to RDBMS and Oracle
+\section{Theory}
+\label{sec:org4a4102c}
+\subsection{Database}
+\label{sec:orgd8554db}
+A database is a collection of related information stored to provide the available to many users for different purposes.
+The content of database is obtained by combining data from various sources in an organization. So that data are available to all the users
+and redundant data can be minimized or climated. Database systems are designed to manage large bodies of information.
+The management of the data involves both definition of structure for storage of information.
+\subsection{Database management System(DBMS)}
+\label{sec:orge148ce3}
+DBMS (Database Management System) is a system that is used to store and manage data.
+A DBMS is a set of programs that is used to store and manipulate data. Manipulation of data include the following.
+\begin{itemize}
+\item Adding new data, for example adding details of new student
+\item Deleting unwanted data, for example deleting the details of students who have completed course.
+\item Changing existing data, for example modifying the fee paid by the students.
+\end{itemize}
+A DBMS provides various functions like data security, data concurrence, data independance, data recovery, etc.
+\subsection{Features of DBMS}
+\label{sec:org98f9834}
+\subsubsection{Support for large amount of data:}
+\label{sec:org2737150}
+Each DBMS is designed to support large amount of data. They provide special ways and means to store and manipulate large amounts of data. In most of the cases the amount of data that can be stored is not actually constrained by DBMS and instead constrained by the availablility of the hardware.
+For example,
+\begin{itemize}
+\item Oracle can store terabytes of data,
+\end{itemize}
+\subsubsection{Data Sharing Concurrency and locking:}
+\label{sec:org5e0c6d1}
+DBMS also allows data to be shared by two or more users. The same data can be accessed by multiple users at the same time - data concurrency.
+How ever when same data is being manipulated at the same time by multiple users certain problems arise. To avoid there problems, DBMS locks data that is being manipulated to avoid two users from modifying the same data at the same time.
+The locking mechanism is transparent and automatic, Neither we have to inform to DBMS about locking nor we need to know how and when DBMS is locking the data.
+\subsubsection{Data Security}
+\label{sec:orgb6e5ed7}
+While DBMS allowing data to be shared, it also ensures that data is only accessed by authorized users.
+DBMS provides features needed to implement security at the enterprise leve.
+By Default, the data of a user cannot be accessed by other users. Unless the owner gives explicit permissions to other users to do so.
+\subsubsection{Data Integirty}
+\label{sec:org83ab9bb}
+Maintaining integrity of the data is an import process. If data loses integrity, it becomes unstable and garbage.
+DBMS provides means to implement rules to maintain integrity of the data. Once we specify which rules are to be implemented then DBMS can make sure that these rules are implemented always.
+\subsubsection{Fault Tolerance and Recovery}
+\label{sec:orgc93b1bc}
+DBMS provides greate deal of fault tolerance. They continue to run in piles of errors. If possible allowing users to rectify the mistake in the mean time. DBMS also allows recovery in the event of failure. For instance, if data on the disk is completly lost due to disk failure then also data can be recovered to the point of failure if proper back up of data is available.
+\subsubsection{Support of languages}
+\label{sec:orge0d69f8}
+DBMS supports a data access and manipulating language. The most widely used data access language for RDBMS(Rational Database Management System) is SQL.
+\subsection{Applications of DBMS:}
+\label{sec:orgdf88a11}
+\begin{itemize}
+\item Banking : All transactions
+\item Library : Digital Library
+\item Airline : Reservation, schedules
+\item Universities : registration, grades
+\item Sales : customers, products, purchases
+\item Manufacturing : production, inventory, orders, supply chain
+\item Human Resource : employee records, salaries, tax deductions
+\item Database touches all the aspects of our lives.
+\end{itemize}
+\subsection{Database User:}
+\label{sec:org0b041ba}
+\subsubsection{Naive User}
+\label{sec:orgedfee58}
+They are unsophisticated users who interact with the systems by invoking one of the applications programs that have been written previously.
+\subsubsection{Application Programmer}
+\label{sec:orgb84fdea}
+They are computer professional who write application programs.
+\subsubsection{Sophisticated User}
+\label{sec:org9e137ee}
+They interact with the system without writing programs.
+\subsubsection{Specialized User}
+\label{sec:orgfbc1eca}
+They are sophisticated user who writes specialized database application that do not fit into traditional data processing frame work.
+\subsection{Relational Database Management Systems (RDBMS)}
+\label{sec:orgf843185}
+A DBMS that is based on relational model is called a RDBMS. Relational model is most successful mode of all three models. Designed by Edger Codd. Relational model is based on the theory of sets and relations of mathematics.
+Relational model represents data in the form of a table.
+A table is a two dimentional array containing rows and columns. Each row contains data related to an entity such as a student. Each column contains the data related to a single attribute of the entity such as student name.
+One of the reasons behind the success of relational model is it simplicity. It is easy to understand the idea and easy to manipulate. Another important advantage with relational model, compared with remaining two models is, it dosen't bind data with relationship between data item. Instead it allows you to have dynamic relationship between entities using the values of the columns.
+Almost all database systems that are sold in the market, now-a-days, have either complete or partial implementation of the relational model.
+\subsection{Oracle}
+\label{sec:orge3ef148}
+Oracle is the name of the database management system that comes from Oracle Corporation. Unlike Oracle8i, which is only a database management system. In simple words Oracle9i is a platform and not a simple database management system.
+Oracle9iDB is the database management system that is used to store and access data. Oracle is by far the most widly used relational database management system(RDBMS).
+Oracle Corporation is second largest company next to Microsoft. Oracle Corporation has been targeting Internet Programming with the caption software powes the internet.
+\subsection{Oracle Database Server}
+\label{sec:orgd0d9a6d}
+Oracle datbase server is one of the database that are widely used in client/server computing as back-end. Fron-end programs that are written using application development tools such as visual basic access oracle and submit SQL commands for execution.
+\subsection{Structured Query Language(SQL)}
+\label{sec:org5bf1157}
+SQL is a language that provides an interface to relational database systems. In common usage SQL also encompasses DML(Data Manipulation Language) used for creating and modifying tables and other database structures.
+SQL has been a command language for communication with oracle server from any tool or application. Oracle SQL contains many extensions. When SQL statements is entered it stores in a part of memory called the SQL buffer and remains there until a new SQL statement entered.
+SQL *PLUS is an oracle tool that recognizes and submits SQL statements to the oracle server for execution. It
+contains its own command language.
+\subsection{Features of SQL}
+\label{sec:org1408521}
+\begin{itemize}
+\item SQL can be used by a range of users, including those with little or no programming experience.
+\item It is non procedural language.
+\item It reduces the amount of time required for creating and maintaining systems.
+\item It is an English-like Language.
+\end{itemize}
+\subsection{Features of SQL PLUS}
+\label{sec:orgb5a05dd}
+\begin{itemize}
+\item It accepts SQL input from files.
+\item It provides a line editor for modifying SQL statements.
+\item It accesses local and remote databases.
+\item It formates query results into basic reports.
+\end{itemize}
+\end{document}

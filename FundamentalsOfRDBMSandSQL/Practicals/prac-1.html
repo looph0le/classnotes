@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-03-03 Thu 17:20 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Practical 1</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="looph0le" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Practical 1</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgb4a9d33">1. Aim</a></li>
+<li><a href="#orgd8be20f">2. Theory</a>
+<ul>
+<li><a href="#org6a8dd96">2.1. Database</a></li>
+<li><a href="#org4690b33">2.2. Database management System(DBMS)</a></li>
+<li><a href="#orgdb3ef8b">2.3. Features of DBMS</a>
+<ul>
+<li><a href="#org58493c6">2.3.1. Support for large amount of data:</a></li>
+<li><a href="#org6eae73a">2.3.2. Data Sharing Concurrency and locking:</a></li>
+<li><a href="#org361326e">2.3.3. Data Security</a></li>
+<li><a href="#org99dbadf">2.3.4. Data Integirty</a></li>
+<li><a href="#org04c2349">2.3.5. Fault Tolerance and Recovery</a></li>
+<li><a href="#orga74c0eb">2.3.6. Support of languages</a></li>
+</ul>
+</li>
+<li><a href="#orgd50cca2">2.4. Applications of DBMS:</a></li>
+<li><a href="#org8a600a4">2.5. Database User:</a>
+<ul>
+<li><a href="#org97252c6">2.5.1. Naive User</a></li>
+<li><a href="#org24da980">2.5.2. Application Programmer</a></li>
+<li><a href="#org3b42cd3">2.5.3. Sophisticated User</a></li>
+<li><a href="#org3ddc7dc">2.5.4. Specialized User</a></li>
+</ul>
+</li>
+<li><a href="#orgac16f75">2.6. Relational Database Management Systems (RDBMS)</a></li>
+<li><a href="#org35c358f">2.7. Oracle</a></li>
+<li><a href="#org8030df0">2.8. Oracle Database Server</a></li>
+<li><a href="#org8c99731">2.9. Structured Query Language(SQL)</a></li>
+<li><a href="#orgc428475">2.10. Features of SQL</a></li>
+<li><a href="#orgeb22675">2.11. Features of SQL PLUS</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb4a9d33" class="outline-2">
+<h2 id="orgb4a9d33"><span class="section-number-2">1</span> Aim</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Introduction to RDBMS and Oracle
+</p>
+</div>
+</div>
+<div id="outline-container-orgd8be20f" class="outline-2">
+<h2 id="orgd8be20f"><span class="section-number-2">2</span> Theory</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org6a8dd96" class="outline-3">
+<h3 id="org6a8dd96"><span class="section-number-3">2.1</span> Database</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+A database is a collection of related information stored to provide the available to many users for different purposes.
+The content of database is obtained by combining data from various sources in an organization. So that data are available to all the users
+and redundant data can be minimized or climated. Database systems are designed to manage large bodies of information.
+The management of the data involves both definition of structure for storage of information.
+</p>
+</div>
+</div>
+<div id="outline-container-org4690b33" class="outline-3">
+<h3 id="org4690b33"><span class="section-number-3">2.2</span> Database management System(DBMS)</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+DBMS (Database Management System) is a system that is used to store and manage data.
+A DBMS is a set of programs that is used to store and manipulate data. Manipulation of data include the following.
+</p>
+<ul class="org-ul">
+<li>Adding new data, for example adding details of new student</li>
+<li>Deleting unwanted data, for example deleting the details of students who have completed course.</li>
+<li>Changing existing data, for example modifying the fee paid by the students.</li>
+</ul>
+<p>
+A DBMS provides various functions like data security, data concurrence, data independance, data recovery, etc.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdb3ef8b" class="outline-3">
+<h3 id="orgdb3ef8b"><span class="section-number-3">2.3</span> Features of DBMS</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org58493c6" class="outline-4">
+<h4 id="org58493c6"><span class="section-number-4">2.3.1</span> Support for large amount of data:</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+Each DBMS is designed to support large amount of data. They provide special ways and means to store and manipulate large amounts of data. In most of the cases the amount of data that can be stored is not actually constrained by DBMS and instead constrained by the availablility of the hardware.
+For example,
+</p>
+<ul class="org-ul">
+<li>Oracle can store terabytes of data,</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6eae73a" class="outline-4">
+<h4 id="org6eae73a"><span class="section-number-4">2.3.2</span> Data Sharing Concurrency and locking:</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+DBMS also allows data to be shared by two or more users. The same data can be accessed by multiple users at the same time - data concurrency.
+How ever when same data is being manipulated at the same time by multiple users certain problems arise. To avoid there problems, DBMS locks data that is being manipulated to avoid two users from modifying the same data at the same time.
+The locking mechanism is transparent and automatic, Neither we have to inform to DBMS about locking nor we need to know how and when DBMS is locking the data.
+</p>
+</div>
+</div>
+<div id="outline-container-org361326e" class="outline-4">
+<h4 id="org361326e"><span class="section-number-4">2.3.3</span> Data Security</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<p>
+While DBMS allowing data to be shared, it also ensures that data is only accessed by authorized users.
+DBMS provides features needed to implement security at the enterprise leve.
+By Default, the data of a user cannot be accessed by other users. Unless the owner gives explicit permissions to other users to do so.
+</p>
+</div>
+</div>
+<div id="outline-container-org99dbadf" class="outline-4">
+<h4 id="org99dbadf"><span class="section-number-4">2.3.4</span> Data Integirty</h4>
+<div class="outline-text-4" id="text-2-3-4">
+<p>
+Maintaining integrity of the data is an import process. If data loses integrity, it becomes unstable and garbage.
+DBMS provides means to implement rules to maintain integrity of the data. Once we specify which rules are to be implemented then DBMS can make sure that these rules are implemented always.
+</p>
+</div>
+</div>
+<div id="outline-container-org04c2349" class="outline-4">
+<h4 id="org04c2349"><span class="section-number-4">2.3.5</span> Fault Tolerance and Recovery</h4>
+<div class="outline-text-4" id="text-2-3-5">
+<p>
+DBMS provides greate deal of fault tolerance. They continue to run in piles of errors. If possible allowing users to rectify the mistake in the mean time. DBMS also allows recovery in the event of failure. For instance, if data on the disk is completly lost due to disk failure then also data can be recovered to the point of failure if proper back up of data is available.
+</p>
+</div>
+</div>
+<div id="outline-container-orga74c0eb" class="outline-4">
+<h4 id="orga74c0eb"><span class="section-number-4">2.3.6</span> Support of languages</h4>
+<div class="outline-text-4" id="text-2-3-6">
+<p>
+DBMS supports a data access and manipulating language. The most widely used data access language for RDBMS(Rational Database Management System) is SQL.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd50cca2" class="outline-3">
+<h3 id="orgd50cca2"><span class="section-number-3">2.4</span> Applications of DBMS:</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>Banking : All transactions</li>
+<li>Library : Digital Library</li>
+<li>Airline : Reservation, schedules</li>
+<li>Universities : registration, grades</li>
+<li>Sales : customers, products, purchases</li>
+<li>Manufacturing : production, inventory, orders, supply chain</li>
+<li>Human Resource : employee records, salaries, tax deductions</li>
+<li>Database touches all the aspects of our lives.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8a600a4" class="outline-3">
+<h3 id="org8a600a4"><span class="section-number-3">2.5</span> Database User:</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-org97252c6" class="outline-4">
+<h4 id="org97252c6"><span class="section-number-4">2.5.1</span> Naive User</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<p>
+They are unsophisticated users who interact with the systems by invoking one of the applications programs that have been written previously.
+</p>
+</div>
+</div>
+<div id="outline-container-org24da980" class="outline-4">
+<h4 id="org24da980"><span class="section-number-4">2.5.2</span> Application Programmer</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<p>
+They are computer professional who write application programs.
+</p>
+</div>
+</div>
+<div id="outline-container-org3b42cd3" class="outline-4">
+<h4 id="org3b42cd3"><span class="section-number-4">2.5.3</span> Sophisticated User</h4>
+<div class="outline-text-4" id="text-2-5-3">
+<p>
+They interact with the system without writing programs.
+</p>
+</div>
+</div>
+<div id="outline-container-org3ddc7dc" class="outline-4">
+<h4 id="org3ddc7dc"><span class="section-number-4">2.5.4</span> Specialized User</h4>
+<div class="outline-text-4" id="text-2-5-4">
+<p>
+They are sophisticated user who writes specialized database application that do not fit into traditional data processing frame work.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgac16f75" class="outline-3">
+<h3 id="orgac16f75"><span class="section-number-3">2.6</span> Relational Database Management Systems (RDBMS)</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+A DBMS that is based on relational model is called a RDBMS. Relational model is most successful mode of all three models. Designed by Edger Codd. Relational model is based on the theory of sets and relations of mathematics.
+Relational model represents data in the form of a table.
+A table is a two dimentional array containing rows and columns. Each row contains data related to an entity such as a student. Each column contains the data related to a single attribute of the entity such as student name.
+One of the reasons behind the success of relational model is it simplicity. It is easy to understand the idea and easy to manipulate. Another important advantage with relational model, compared with remaining two models is, it dosen't bind data with relationship between data item. Instead it allows you to have dynamic relationship between entities using the values of the columns.
+Almost all database systems that are sold in the market, now-a-days, have either complete or partial implementation of the relational model.
+</p>
+</div>
+</div>
+<div id="outline-container-org35c358f" class="outline-3">
+<h3 id="org35c358f"><span class="section-number-3">2.7</span> Oracle</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+Oracle is the name of the database management system that comes from Oracle Corporation. Unlike Oracle8i, which is only a database management system. In simple words Oracle9i is a platform and not a simple database management system.
+Oracle9iDB is the database management system that is used to store and access data. Oracle is by far the most widly used relational database management system(RDBMS).
+Oracle Corporation is second largest company next to Microsoft. Oracle Corporation has been targeting Internet Programming with the caption software powes the internet.
+</p>
+</div>
+</div>
+<div id="outline-container-org8030df0" class="outline-3">
+<h3 id="org8030df0"><span class="section-number-3">2.8</span> Oracle Database Server</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+Oracle datbase server is one of the database that are widely used in client/server computing as back-end. Fron-end programs that are written using application development tools such as visual basic access oracle and submit SQL commands for execution.
+</p>
+</div>
+</div>
+<div id="outline-container-org8c99731" class="outline-3">
+<h3 id="org8c99731"><span class="section-number-3">2.9</span> Structured Query Language(SQL)</h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+SQL is a language that provides an interface to relational database systems. In common usage SQL also encompasses DML(Data Manipulation Language) used for creating and modifying tables and other database structures.
+SQL has been a command language for communication with oracle server from any tool or application. Oracle SQL contains many extensions. When SQL statements is entered it stores in a part of memory called the SQL buffer and remains there until a new SQL statement entered.
+SQL *PLUS is an oracle tool that recognizes and submits SQL statements to the oracle server for execution. It
+contains its own command language.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc428475" class="outline-3">
+<h3 id="orgc428475"><span class="section-number-3">2.10</span> Features of SQL</h3>
+<div class="outline-text-3" id="text-2-10">
+<ul class="org-ul">
+<li>SQL can be used by a range of users, including those with little or no programming experience.</li>
+<li>It is non procedural language.</li>
+<li>It reduces the amount of time required for creating and maintaining systems.</li>
+<li>It is an English-like Language.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgeb22675" class="outline-3">
+<h3 id="orgeb22675"><span class="section-number-3">2.11</span> Features of SQL PLUS</h3>
+<div class="outline-text-3" id="text-2-11">
+<ul class="org-ul">
+<li>It accepts SQL input from files.</li>
+<li>It provides a line editor for modifying SQL statements.</li>
+<li>It accesses local and remote databases.</li>
+<li>It formates query results into basic reports.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: looph0le</p>
+<p class="date">Created: 2022-03-03 Thu 17:20</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

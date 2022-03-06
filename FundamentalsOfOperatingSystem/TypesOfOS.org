@@ -11,6 +11,7 @@ In Serial Processing, the programs were executed /strictly/ in a serial manner /
 + The process of development and preparation of a program in such an environment is shown as cumbersome due to serial processing and numerous manual processing.
 + At a time, only a small subject of resources could be used, so, there was poor utilization of system resources.
 
+  
 * Batch Processing
 To speed up the processing, the jobs with similar needs were batched together and were run through the computer as a group.
 
@@ -86,4 +87,14 @@ One one hand, processing may be very fast as many processors may be available fo
 
 
 * Time-Sharing Systems
+These systems are quite interactive that allow user's interaction with the system through OS commands. The user program can be entered and executed in an interactive mode. Each interactive user is assigned a time slice in a round-robin fashion during which it controls the CPU.
+During Time-slice, the process gets control of CPU and tries to complete its computation. If the computation is not completed during the assingned tine slot the running process is preempted, then it has to wait for time slot in the next cycle to resume computation from where it was preempted. The time-slot cycle is so adjusted that each user has a feel as if the CPU is assigned to it all the time.
 
+
+These systems provide quick terminal reponse and allow online debugging. Each user virtually gets the entire machine. This implies that CPU's time is shared between many users processes.
+
+
+*NOTE*: These processes are can be of one user or of different users. Drastically reducing the software development time.
+
+
+Unlike batch processes
