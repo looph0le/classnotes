@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-03-06 Sun 18:49 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Data Types, Variables and Arrays</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="looph0le" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" href="https://sandyuraz.com/styles/org.css">
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Data Types, Variables and Arrays</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org4d556d0">1. Java is a strongly Typed Language</a></li>
+<li><a href="#orgb995d6f">2. The Primitive Types</a>
+<ul>
+<li><a href="#org418694c">2.1. Integers</a>
+<ul>
+<li><a href="#orga15ec4b">2.1.1. byte</a></li>
+<li><a href="#org5196a18">2.1.2. Short</a></li>
+<li><a href="#org60b5246">2.1.3. int</a></li>
+<li><a href="#orgf51ecb0">2.1.4. long</a></li>
+</ul>
+</li>
+<li><a href="#orgc21701e">2.2. Floating-Point Types</a>
+<ul>
+<li><a href="#orgce272a1">2.2.1. float</a></li>
+<li><a href="#org1b1193e">2.2.2. double</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org4d556d0" class="outline-2">
+<h2 id="org4d556d0"><span class="section-number-2">1</span> Java is a strongly Typed Language</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+It is important to state at the outset that java is a strongly typed language. Indeed, part of java's safety and robustness comes from this fact. Let's see what this means. First, every variable has a type, every expression has a type, and every type is strictly defined.
+Second, all assignments, whether explicit or via parameters passing in method calls, are checked for type compatibility. There are no automatic coercions or conversions of conflicting types as in some languages. The java compiler checks all expressions and parameters to ensure that the types are compatible.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb995d6f" class="outline-2">
+<h2 id="orgb995d6f"><span class="section-number-2">2</span> The Primitive Types</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Java defines <i>eight primitive types of data</i>: <b>byte, short, int, long, char, float, double, and boolean.</b>
+The primitive types are also commonly referred to as simple types, and both terms will be used in this book. These can be put in four groups:
+</p>
+<ul class="org-ul">
+<li><b>Integers</b>: This group includes <b>byte, short, int, and long</b> which are for whole-valued signed numbers.</li>
+
+<li><b>Floating-point numbers</b>: This group includes <b>float and double</b>, which represent numbers with fractional precision.</li>
+
+<li><b>Characters</b>: This group includes <b>char</b>, which represents symbols in a character set, like letters and numbers.</li>
+
+<li><b>Boolean</b>: This group includes boolean, which is a special type for representing true/false values.</li>
+</ul>
+
+
+<p>
+You can use these types as-is, or to construct arrays or your own class types. Thus, they from the basis for all other types of data that you can create.
+</p>
+
+
+<p>
+The primitive types represent single values&#x2013;not complex objects. Although Java is otherwise completely object-oriented, the primitive types are not. They are analogous to the simple types found in most other non-object-oriented languages. The reason for this is efficiency. Making the primitive types into objects would have degraded performance too much.
+</p>
+
+
+<p>
+Because of java's portability requirements, all data types have a <i>strictly defined range</i>. This allows programs to be written that are guaranteed to run without porting on any machine architecture. While strictly specifying the size of an integer may cause a small loss of performace in some environment, it is necessary in order to achieve portability.
+</p>
+</div>
+
+<div id="outline-container-org418694c" class="outline-3">
+<h3 id="org418694c"><span class="section-number-3">2.1</span> Integers</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Java defines four integer types: <b>byte, short, int, and long</b>. All of these are signed, positive and negative values. Java does not support unsigned, positive-only integers.
+</p>
+
+
+<p>
+The width of an integer type should not be thought of as the amount of storage it consumes, but rather as the behaviour it defines for variable and expressions of that type. The java run-time environment is free to use whatever size it wants, as long as the type behave as you declared them.
+</p>
+
+
+<p>
+The width and ranges of these integer types vary widely, as shown in this table:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-right">Width</th>
+<th scope="col" class="org-left">Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Long</td>
+<td class="org-right">64</td>
+<td class="org-left">-9,223,372,036,854,775,808 to 9,223,372,036,854,775,808</td>
+</tr>
+
+<tr>
+<td class="org-left">int</td>
+<td class="org-right">32</td>
+<td class="org-left">-2,147,483,648 to 2,147,483,647</td>
+</tr>
+
+<tr>
+<td class="org-left">short</td>
+<td class="org-right">16</td>
+<td class="org-left">-32,768 to 32,767</td>
+</tr>
+
+<tr>
+<td class="org-left">byte</td>
+<td class="org-right">8</td>
+<td class="org-left">-128 to 127</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-orga15ec4b" class="outline-4">
+<h4 id="orga15ec4b"><span class="section-number-4">2.1.1</span> byte</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+The smallest integer type is <b>byte</b>. This is a signed 8-bit type that has a range from -128 to 127. Variables of type <b>byte</b> are especially useful when you're working with a stream of data from a network or file. They are also useful when you're working with raw binary data that may not be directly compatible with java's other built-in type.
+</p>
+
+
+<p>
+Byte variable are declared by use of the <b>byte</b> keyword. For example, the following declares two <b>byte</b> variables called <b>b and c</b>:
+</p>
+<div class="org-src-container">
+<pre class="src src-java">byte b,c ;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5196a18" class="outline-4">
+<h4 id="org5196a18"><span class="section-number-4">2.1.2</span> Short</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Short is a signed 16-bit type. It has a range from -32,768 to 32,767. It is probably the least-used java type. Here are some examples of <b>short</b> variable declarations:
+</p>
+<div class="org-src-container">
+<pre class="src src-java">short s;
+short t;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org60b5246" class="outline-4">
+<h4 id="org60b5246"><span class="section-number-4">2.1.3</span> int</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+The most commonly used integer type is <b>int</b>. It is a signed 32-bit type that has range from -2,147,483,648 to 2,147,483,648.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf51ecb0" class="outline-4">
+<h4 id="orgf51ecb0"><span class="section-number-4">2.1.4</span> long</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<p>
+<b>long</b> is a signed 64-bit type and is useful for those occasions where an <b>int</b> is not large enough to hold the desired value. The range of a <b>long</b> is quite large. This makes it useful when big, whole numbers are needed. For example, here is a program that computes the number of miles that light will travel in a specified number of days.
+</p>
+<div class="org-src-container">
+<pre class="src src-java">class Light{
+public static void main(String args[]){
+int lightspeed;
+long days;
+long seconds;
+long distance;
+
+lightspeed = 186000;
+days = 1000;
+seconds = days * 24 * 60 * 60;
+distance = lightspeed * seconds;
+
+System.out.print("In " + days);
+System.out.print(" days light will travel about ");
+System.out.println(Distance + " miles.");
+}
+}
+</pre>
+</div>
+<p>
+This program generates the following output:
+</p>
+
+
+<p>
+In 1000 days light will travel about 16070400000000 miles.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc21701e" class="outline-3">
+<h3 id="orgc21701e"><span class="section-number-3">2.2</span> Floating-Point Types</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Floating-point number, also known as real numbers, are used when evaluating expressions that require fractional precision. Java implements the standard (IEEE-754) set of floating-point types and operators. There are two kinds of floating-point types, <b>float</b> and <b>double</b>, which represent single- and double-precision numbers, respectively.
+</p>
+
+
+<p>
+There width and ranges are shown here:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-right">Width in Bits</th>
+<th scope="col" class="org-left">Approximate Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">double</td>
+<td class="org-right">64</td>
+<td class="org-left">4.9e-326 to 1.8e+308</td>
+</tr>
+
+<tr>
+<td class="org-left">float</td>
+<td class="org-right">32</td>
+<td class="org-left">1.4e-045 to 3.4e+038</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-orgce272a1" class="outline-4">
+<h4 id="orgce272a1"><span class="section-number-4">2.2.1</span> float</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+The type <b>float</b> specifies a single-precision value that uses 32 bits of storage. Single precision is faster on some processors and take half as much space as double precision, but will become imprecise when the values are either very large or very samll. Variables of type <b>float</b> are useful when you need a fractional component, but don't require a large degree of precision.
+Examples are:
+</p>
+<div class="org-src-container">
+<pre class="src src-java">float hightemp, lowtemp;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1b1193e" class="outline-4">
+<h4 id="org1b1193e"><span class="section-number-4">2.2.2</span> double</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+Double precision, as denoted by the <b>double</b> keyword, uses 64 bit to store a value. Double precision is actually faster than single precision on some modern processors that have been optomized for high-speed mathematical calculations. All transendental math functions, such as sin(), cos(), and sqrt(), return double values.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: looph0le</p>
+<p class="date">Created: 2022-03-06 Sun 18:49</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
