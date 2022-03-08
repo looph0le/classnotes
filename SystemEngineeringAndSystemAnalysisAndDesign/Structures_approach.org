@@ -1,0 +1,16 @@
+#+TITLE: Problems with development Life Cycle Approach: Need for Structured Approach
+
+* Introduction
+The system development life cycle (SDLC) is the traditional system development method that organizations use for large-scale IT projects. The SDLC is a structured framework that consists of sequential processes by which an information system is developed.
+
+1. System Investigation
+2. System Analysis
+3. System Design
+4. Programming
+5. Testing
+6. Implementation
+7. Operation and Maintenance
+
+Once a development project has the necessary approval from all participants, the systems analysis stage begins. System analysis is the examination of the business problem that organizations plan to solve with an information system. The main purpose of the systems analysis stage is to gether information about the existing system in order to determine the requirements for an enhanced system or a new system. The end product of this stage, known as the deliverable, is a set of system requirements.
+
+

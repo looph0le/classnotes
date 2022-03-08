@@ -1,0 +1,49 @@
+#+TITLE: Servers
+
+* Server
+Server is a computer or device on a network that manages network resources. A server is the main computer in which the network operating system is loaded.
+
+
+The servers are of two types:
+** Dedicated Server
+Dedicated servers do nothing but fulfill request to network clients. These are commonly found in client server environment.
+It's defined as the computer with operating system and can't be used by any user. It is microcomputer, which act as server is restricted to the network funtion often incorporates more powerful capabilities than user workstation can do.
+
+
+A dedicated server is unavailable for running user applications and hence increase overall systems cost of the network and can support more features such as e-mail service or multiple hard-disk and provide faster reponse networks.
+Large network is usually required for dedicated response networks.
+
+*** Disadvantages of dedicated server:
+All data is stored on a single server, if the server fails all data becomes unavailable.
+
+
+Design, proper management and backup is essential.
+*** Advantages of dedicated server:
+- Its response time is very fast
+- It can't be used as node
+- Foreground LAN processing is done
+- It is more reliable, more efficient and more secure.
+  
+** Non-dedicated Server
+Non-dedicated servers do double duty by requesting and providing services. It is the microcomputer, which is made as a server and can act as an individual workstation even while it controls the network.
+
+
+If the computer system consists of a network operating system, it can be used as a workstation or if user can act directly with the server then it known as a non dedicated server.
+
+
+If number of computer is less and we have to connect it with LAN at that time we have to connect it or make the server non dedicated so that any user who has administration power can work on it as node.
+
+
+Network process will be done in background and dos process is done in foreground.
+
+Its response time is slow.
+
+* Different types of servers:
+** File server:
+A file server is a computer attached to a network that has the primary purpose of providing a location for the shared storage of computer files(such as documents, sound files, photographs, movies, images, databases, etc.) that can be accessed by the workstations that are attached to the computer network.
+
+
+File server is a computer and storage device dedicated to storing files. Any user on the network can store files on the server.
+
+
+In file server FTP (file transfer protocal) is installed. FTP makes sure to transfer files securely between computers.
