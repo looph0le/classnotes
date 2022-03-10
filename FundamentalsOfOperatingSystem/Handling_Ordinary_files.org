@@ -1,0 +1,17 @@
+#+TITLE: Handling Ordinary Files
+
+
+
+* cat: Displaying and Creating Files
+cat is one of the most well-known commands in the UNIX system. It is mainly used to display the contents of a small file on the terminal.
+
+
+cat, like several other UNIX commands, also accepts more than one filename as arguments.
+
+
+The contents of the second file are shown immediately after the first file without any header information. In other words, cat concatinates the two files--hence its name.
+
+** cat Options (-v and -n)
+There are two cat options that you may find useful, though POSIX doesn't require cat to support either one.
+
+- Displaying Nonprinting Characters(-v)

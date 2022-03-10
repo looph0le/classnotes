@@ -1,0 +1,149 @@
+#+TITLE: Applet Programming
+
+* Introduction
+Applet are small java programs that are primarily used in Internet Computing. They are be transported over internet from one computer to another and run using the Applet Viewer or any web browser that supports Java.
+
+
+An applet, like any application program, can do many things for us. It can perform arithmatic operations, display graphics, play sounds, accept user input, create animations, and play interative games.
+
+
+Java has revolutionized the way the internet users retrieve and use documents on the world wide network. Java has enabled them to create and use fully interactive multimedia web documents. A web page now can contain not only a simple text or a static image but also a java applet which, when run can produce grapfics, sounds and moving images, java applet therefore have begun to make a significant impact on the World Wide Web.
+
+* Local and Remote Applets
+We can embed applets into web pages in two ways:
+ 1. We can write our own applets and embed them into web pages.
+ 2. We can download an applet from a remote computer system and then embed it into a web page.
+
+** Local Applet
+An applet developed locally and stored in a local system is known as a *local applet*. When a web page is trying to find a local applet, it does not need to use the Internet and therefore the local system does not require the internet connection. It simply searched the directories in the local system and locates and loads the specified applet.
+
+** Remote Applet
+A remote applet is that which is developed by someone else and stored on a remote computer connected to the internet. If our system is connected to the internet, we can download the remote applet onto our system via at the internet and run it.
+
+In order to locate and load a remote applet, we must know the applet's address on the web. This address is known as /Uniform Resource Locator (URL)/ and must be specified in the applet's HTML document as the value of the ~CODEBASE~ attribute.
+
+*NOTE: In the case of local applet, CODEBASE may be absent or may specify a local directory.*
+
+* How Applets Differ From Applications
+Although both the applets and stand-alone applications are java programs, they are significant and have difference between them. They are usually written to accomplish a small task or a component of a task. Since they are usually designed for use on the Internet, they impose certain limitations and restrictions in their design.
+
+- Applets do not use the *main()* method of initiating the execution of the code. Applets, when loaded, automatically call certain method of applet class to start and execute the applet code.
+- Unlike stand-alone applications. /applet cannot be run independently/. They are run from inside a web page using a special feature known as /HTML tag/.
+- Applets cannot read from or write to the file in the local computer.
+- Applets cannot communicate with other servers on the network.
+- Applets cannot run any program from the local computer.
+- Applets are restricted from using libraries from other languages such as C or C++.
+
+All these restrictions and limitations are placed in the interest of security of systems. These restrictions ensure that an applet cannot do any damage to the local system.
+
+* Preparation To Write Applets
+First of all, let us consider the situations when we might need to use applets.
+ 1. When we need something dynamic to be included in the display of a web page.
+ 2. When we require some "flash" output.
+ 3. When we want to create a program and make it available on the internet for us by others on their computers.
+
+The steps involved in developing and testing an applet are:
+
+ 1. Building an applet code (.java file)
+ 2. Creating an executable applet (.class file)
+ 3. Designing a Web Page using HTML tags
+ 4. Preparing <APPLET> tag
+ 5. Incorporating <APPLET> tag
+ 6. Creating HTML file
+ 7. Testing the applet code
+
+* Building Applet Code
+It is essential that our applet code uses the services of two classes, namely, Applet and Graphics from the Java class library.
+
+
+The applet class which is contained in the java.applet package provides life and behaviour to the applet through its methods such as init(), start() and point().
+
+
+When an applet is loaded, Java automatically calls a series of Applet class methods for starting, running and stopping the applet code. The applet class therefore maintains the /lifecycle/ of an applet.
+
+
+The *paint()* method of the applet class, when it is called, actually displays the result of the applet code on the screen. The output maybe text, graphics, or sound.
+
+
+The *paint()* method, which requires a *Grapfics* object as an argument, is defined as Follows:
+
+#+BEGIN_SRC java
+public void paint (Graphics g)
+#+END_SRC
+
+This requires that the applet code imports the *java.awt* package that contains the *Graphics* class.
+
+
+Applet code will have a general formate as shown below:
+#+BEGIN_SRC java
+import java.awt.*;
+import java.applet.*;
+
+public class appletclassname extends Applet{
+    ....................
+        ................
+        public void paint(Graphics g){
+                ................
+                ................
+                ................
+            }
+    }
+#+END_SRC
+
+The /appletclassname/ is the main class for the applet.
+
+
+When the applet is loaded, Java creates an instance of this class, and then a series of Applet class methods are called on that instance to execute the code.
+
+
+Example: Hellojava applet
+#+BEGIN_SRC java
+import java.awt.*;
+   import java.applet.*;
+
+   class helloJava extends Applet{
+       public void paint(Graphics g){
+           g.drawString("Hello Java", 10, 100);
+       }
+   }
+#+END_SRC
+
+Remember that the *Applet* class itself is a subclass of the *Panel* class, which is again a subclass of the *Container*.
+
+* Applet Life Cycle
+Every Java applet inherits a set of default behaviours from the *Applet* class. As a result, when an applet is loaded, it undergoes a series of changes in its state.
+- Born on initialization state
+- Running state
+- Idle state
+- Dead or destroyed state
+
+** Initialization State
+Applet enters the *initialization* state when it is first loaded. This is achieved by calling the *init()* method of Applet class. The applet is born. At this stage, we may do the following, if required:
+
+- Create objects needed by the applet
+- Set up initial values
+- Load images or fonts
+- set up colors
+
+  The initialization occurs only once in the applet's life cycle. To provide any of the behavious mentioned above, we must override the *init()* method.
+
+** Running State
+Applet enters the /running/ state when the system calls the *start()* method of *Applet* class. This occurs automatically after the applet is initialized. Starting can also occur if the applet is already in "stopped"(idle) state. Note that, unlike *init()* method, the *start()* method may be called more than once. We may override the *start()* method to create a thread to control the applet.
+
+** Idle or Stopped State
+An applet becomes /idle/ when it is stopped from running. Stopping occurs automatically when we leave the page containing the currently running applet. We can also do so by calling the *stop()* method explicitly.
+
+
+If we use a thread to run the applet, then we must use stop() method to terminate the thread.
+
+** Dead State
+An applet is said to be /dead/ when it is removed from memory. This occurs automatically by invoking the *destroy()* method when we quit the browser. Like initialization, destroying stage occurs only once in the applet's life cycle. If the applet has created any resources, like threads, we may override the destroy() method to clean up these resources.
+
+** Display State
+Applet moves to the /display/ state whenever it has to perform some output operations on the screen. This happens immidiately after the applet enters into the running state. The *paint()* method is called to accomplish this task.
+
+
+Almost every applet will have a *paint()* method. Like other methods in the life cycle, the default versions of *paint()* method does absolutely nothing. We must therefore override this method if we want anything to be displayed on the screen.
+
+
+NOTE: Display state is not considered as a part of the applet's life cycle. In fact, the paint() method is defined in the *Applet* class. It is inherited from the *Component* class, a super class of Applet.
