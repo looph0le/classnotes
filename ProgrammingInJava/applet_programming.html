@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-03-10 Thu 19:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Applet Programming</title>
+<meta name="author" content="looph0le" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Applet Programming</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org71cc1d4">1. Introduction</a></li>
+<li><a href="#orgbb8d337">2. Local and Remote Applets</a>
+<ul>
+<li><a href="#orga66a369">2.1. Local Applet</a></li>
+<li><a href="#org8ea0851">2.2. Remote Applet</a></li>
+</ul>
+</li>
+<li><a href="#orgd2be2a8">3. How Applets Differ From Applications</a></li>
+<li><a href="#org56f84f9">4. Difference between Java Application and Java Applet</a></li>
+<li><a href="#orgbee0760">5. Preparation To Write Applets</a></li>
+<li><a href="#orgd38cb00">6. Building Applet Code</a></li>
+<li><a href="#orge5822b8">7. Applet Life Cycle</a>
+<ul>
+<li><a href="#orgec1db4c">7.1. Initialization State</a></li>
+<li><a href="#org0a70db7">7.2. Running State</a></li>
+<li><a href="#org221bf71">7.3. Idle or Stopped State</a></li>
+<li><a href="#org6d9aece">7.4. Dead State</a></li>
+<li><a href="#orgcdfede3">7.5. Display State</a></li>
+<li><a href="#org915fb7d">7.6. Designing a Web Page</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org71cc1d4" class="outline-2">
+<h2 id="org71cc1d4"><span class="section-number-2">1.</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Applet are small java programs that are primarily used in Internet Computing. They are be transported over internet from one computer to another and run using the Applet Viewer or any web browser that supports Java.
+</p>
+
+
+<p>
+An applet, like any application program, can do many things for us. It can perform arithmatic operations, display graphics, play sounds, accept user input, create animations, and play interative games.
+</p>
+
+
+<p>
+Java has revolutionized the way the internet users retrieve and use documents on the world wide network. Java has enabled them to create and use fully interactive multimedia web documents. A web page now can contain not only a simple text or a static image but also a java applet which, when run can produce grapfics, sounds and moving images, java applet therefore have begun to make a significant impact on the World Wide Web.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbb8d337" class="outline-2">
+<h2 id="orgbb8d337"><span class="section-number-2">2.</span> Local and Remote Applets</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+We can embed applets into web pages in two ways:
+</p>
+<ol class="org-ol">
+<li>We can write our own applets and embed them into web pages.</li>
+<li>We can download an applet from a remote computer system and then embed it into a web page.</li>
+</ol>
+</div>
+
+<div id="outline-container-orga66a369" class="outline-3">
+<h3 id="orga66a369"><span class="section-number-3">2.1.</span> Local Applet</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+An applet developed locally and stored in a local system is known as a <b>local applet</b>. When a web page is trying to find a local applet, it does not need to use the Internet and therefore the local system does not require the internet connection. It simply searched the directories in the local system and locates and loads the specified applet.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8ea0851" class="outline-3">
+<h3 id="org8ea0851"><span class="section-number-3">2.2.</span> Remote Applet</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+A remote applet is that which is developed by someone else and stored on a remote computer connected to the internet. If our system is connected to the internet, we can download the remote applet onto our system via at the internet and run it.
+</p>
+
+<p>
+In order to locate and load a remote applet, we must know the applet&rsquo;s address on the web. This address is known as <i>Uniform Resource Locator (URL)</i> and must be specified in the applet&rsquo;s HTML document as the value of the <code>CODEBASE</code> attribute.
+</p>
+
+<p>
+<b>NOTE: In the case of local applet, CODEBASE may be absent or may specify a local directory.</b>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd2be2a8" class="outline-2">
+<h2 id="orgd2be2a8"><span class="section-number-2">3.</span> How Applets Differ From Applications</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Although both the applets and stand-alone applications are java programs, they are significant and have difference between them. They are usually written to accomplish a small task or a component of a task. Since they are usually designed for use on the Internet, they impose certain limitations and restrictions in their design.
+</p>
+
+<ul class="org-ul">
+<li>Applets do not use the <b>main()</b> method of initiating the execution of the code. Applets, when loaded, automatically call certain method of applet class to start and execute the applet code.</li>
+<li>Unlike stand-alone applications. <i>applet cannot be run independently</i>. They are run from inside a web page using a special feature known as <i>HTML tag</i>.</li>
+<li>Applets cannot read from or write to the file in the local computer.</li>
+<li>Applets cannot communicate with other servers on the network.</li>
+<li>Applets cannot run any program from the local computer.</li>
+<li>Applets are restricted from using libraries from other languages such as C or C++.</li>
+</ul>
+
+<p>
+All these restrictions and limitations are placed in the interest of security of systems. These restrictions ensure that an applet cannot do any damage to the local system.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org56f84f9" class="outline-2">
+<h2 id="org56f84f9"><span class="section-number-2">4.</span> Difference between Java Application and Java Applet</h2>
+<div class="outline-text-2" id="text-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Java Application</th>
+<th scope="col" class="org-left">Java Applet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Java Application are the <b>stand-alone</b> programs</td>
+<td class="org-left">Java Applet are small java programs which are designed</td>
+</tr>
+
+<tr>
+<td class="org-left">which can be executed independently</td>
+<td class="org-left">to exist within HTML web document. It requires some</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Third party tool like a browser to execute.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgbee0760" class="outline-2">
+<h2 id="orgbee0760"><span class="section-number-2">5.</span> Preparation To Write Applets</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+First of all, let us consider the situations when we might need to use applets.
+</p>
+<ol class="org-ol">
+<li>When we need something dynamic to be included in the display of a web page.</li>
+<li>When we require some &ldquo;flash&rdquo; output.</li>
+<li>When we want to create a program and make it available on the internet for us by others on their computers.</li>
+</ol>
+
+<p>
+The steps involved in developing and testing an applet are:
+</p>
+
+<ol class="org-ol">
+<li>Building an applet code (.java file)</li>
+<li>Creating an executable applet (.class file)</li>
+<li>Designing a Web Page using HTML tags</li>
+<li>Preparing &lt;APPLET&gt; tag</li>
+<li>Incorporating &lt;APPLET&gt; tag</li>
+<li>Creating HTML file</li>
+<li>Testing the applet code</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgd38cb00" class="outline-2">
+<h2 id="orgd38cb00"><span class="section-number-2">6.</span> Building Applet Code</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+It is essential that our applet code uses the services of two classes, namely, Applet and Graphics from the Java class library.
+</p>
+
+
+<p>
+The applet class which is contained in the java.applet package provides life and behaviour to the applet through its methods such as init(), start() and point().
+</p>
+
+
+<p>
+When an applet is loaded, Java automatically calls a series of Applet class methods for starting, running and stopping the applet code. The applet class therefore maintains the <i>lifecycle</i> of an applet.
+</p>
+
+
+<p>
+The <b>paint()</b> method of the applet class, when it is called, actually displays the result of the applet code on the screen. The output maybe text, graphics, or sound.
+</p>
+
+
+<p>
+The <b>paint()</b> method, which requires a <b>Grapfics</b> object as an argument, is defined as Follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #ff79c6;">public</span> <span style="color: #bd93f9;">void</span> <span style="color: #50fa7b;">paint</span> (<span style="color: #bd93f9;">Graphics</span> <span style="color: #ffc9e8;">g</span>)
+</pre>
+</div>
+
+<p>
+This requires that the applet code imports the <b>java.awt</b> package that contains the <b>Graphics</b> class.
+</p>
+
+
+<p>
+Applet code will have a general formate as shown below:
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #ff79c6;">import</span> <span style="color: #8be9fd;">java</span>.<span style="color: #8be9fd;">awt</span>.*;
+<span style="color: #ff79c6;">import</span> <span style="color: #8be9fd;">java</span>.<span style="color: #8be9fd;">applet</span>.*;
+
+<span style="color: #ff79c6;">public</span> <span style="color: #ff79c6;">class</span> <span style="color: #bd93f9;">appletclassname</span> <span style="color: #ff79c6;">extends</span> <span style="color: #bd93f9;">Applet</span>{
+    ....................
+        ................
+        <span style="color: #ff79c6;">public</span> <span style="color: #bd93f9;">void</span> paint(<span style="color: #bd93f9;">Graphics</span> <span style="color: #ffc9e8;">g</span>){
+                ................
+                ................
+                ................
+            }
+    }
+</pre>
+</div>
+
+<p>
+The <i>appletclassname</i> is the main class for the applet.
+</p>
+
+
+<p>
+When the applet is loaded, Java creates an instance of this class, and then a series of Applet class methods are called on that instance to execute the code.
+</p>
+
+
+<p>
+Example: Hellojava applet
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #ff79c6;">import</span> <span style="color: #8be9fd;">java</span>.<span style="color: #8be9fd;">awt</span>.*;
+   <span style="color: #ff79c6;">import</span> <span style="color: #8be9fd;">java</span>.<span style="color: #8be9fd;">applet</span>.*;
+
+   <span style="color: #ff79c6;">class</span> <span style="color: #bd93f9;">helloJava</span> <span style="color: #ff79c6;">extends</span> <span style="color: #bd93f9;">Applet</span>{
+       <span style="color: #ff79c6;">public</span> <span style="color: #bd93f9;">void</span> <span style="color: #50fa7b;">paint</span>(<span style="color: #bd93f9;">Graphics</span> <span style="color: #ffc9e8;">g</span>){
+           g.drawString(<span style="color: #f1fa8c;">"Hello Java"</span>, <span style="color: #bd93f9; font-weight: bold;">10</span>, <span style="color: #bd93f9; font-weight: bold;">100</span>);
+       }
+   }
+</pre>
+</div>
+
+<p>
+Remember that the <b>Applet</b> class itself is a subclass of the <b>Panel</b> class, which is again a subclass of the <b>Container</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge5822b8" class="outline-2">
+<h2 id="orge5822b8"><span class="section-number-2">7.</span> Applet Life Cycle</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Every Java applet inherits a set of default behaviours from the <b>Applet</b> class. As a result, when an applet is loaded, it undergoes a series of changes in its state.
+</p>
+<ul class="org-ul">
+<li>Born on initialization state</li>
+<li>Running state</li>
+<li>Idle state</li>
+<li>Dead or destroyed state</li>
+</ul>
+</div>
+
+<div id="outline-container-orgec1db4c" class="outline-3">
+<h3 id="orgec1db4c"><span class="section-number-3">7.1.</span> Initialization State</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Applet enters the <b>initialization</b> state when it is first loaded. This is achieved by calling the <b>init()</b> method of Applet class. The applet is born. At this stage, we may do the following, if required:
+</p>
+
+<ul class="org-ul">
+<li>Create objects needed by the applet</li>
+<li>Set up initial values</li>
+<li>Load images or fonts</li>
+<li><p>
+set up colors
+</p>
+
+<p>
+The initialization occurs only once in the applet&rsquo;s life cycle. To provide any of the behavious mentioned above, we must override the <b>init()</b> method.
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0a70db7" class="outline-3">
+<h3 id="org0a70db7"><span class="section-number-3">7.2.</span> Running State</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+Applet enters the <i>running</i> state when the system calls the <b>start()</b> method of <b>Applet</b> class. This occurs automatically after the applet is initialized. Starting can also occur if the applet is already in &ldquo;stopped&rdquo;(idle) state. Note that, unlike <b>init()</b> method, the <b>start()</b> method may be called more than once. We may override the <b>start()</b> method to create a thread to control the applet.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org221bf71" class="outline-3">
+<h3 id="org221bf71"><span class="section-number-3">7.3.</span> Idle or Stopped State</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+An applet becomes <i>idle</i> when it is stopped from running. Stopping occurs automatically when we leave the page containing the currently running applet. We can also do so by calling the <b>stop()</b> method explicitly.
+</p>
+
+
+<p>
+If we use a thread to run the applet, then we must use stop() method to terminate the thread.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6d9aece" class="outline-3">
+<h3 id="org6d9aece"><span class="section-number-3">7.4.</span> Dead State</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+An applet is said to be <i>dead</i> when it is removed from memory. This occurs automatically by invoking the <b>destroy()</b> method when we quit the browser. Like initialization, destroying stage occurs only once in the applet&rsquo;s life cycle. If the applet has created any resources, like threads, we may override the destroy() method to clean up these resources.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcdfede3" class="outline-3">
+<h3 id="orgcdfede3"><span class="section-number-3">7.5.</span> Display State</h3>
+<div class="outline-text-3" id="text-7-5">
+<p>
+Applet moves to the <i>display</i> state whenever it has to perform some output operations on the screen. This happens immidiately after the applet enters into the running state. The <b>paint()</b> method is called to accomplish this task.
+</p>
+
+
+<p>
+Almost every applet will have a <b>paint()</b> method. Like other methods in the life cycle, the default versions of <b>paint()</b> method does absolutely nothing. We must therefore override this method if we want anything to be displayed on the screen.
+</p>
+
+
+<p>
+NOTE: Display state is not considered as a part of the applet&rsquo;s life cycle. In fact, the paint() method is defined in the <b>Applet</b> class. It is inherited from the <b>Component</b> class, a super class of Applet.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org915fb7d" class="outline-3">
+<h3 id="org915fb7d"><span class="section-number-3">7.6.</span> Designing a Web Page</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: looph0le</p>
+<p class="date">Created: 2022-03-10 Thu 19:24</p>
+</div>
+</body>
+</html>

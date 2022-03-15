@@ -62,3 +62,52 @@ static Thread currentThread()
 #+END_SRC
 
 This method returns reference to the thread in which it is called. Once you have a reference to the main method, you can control it just like any thread.
+
+
+Example:
+#+BEGIN_SRC java
+class CurrentThreadDemo{
+    public static void main(String args[]){
+        Thead t = Thread.currentThread();
+
+        System.out.println("Current thread: " + t);
+        t.setName("My Thread");
+        System.out.println("After name change: " + t);
+        try{
+            for(int n = 5;n>0;n--){
+                System.out.println(n);
+                Thread.sleep(1000);
+            }
+            catch(InterruptedException e){
+                System.out.println("Main thread interrupted");
+            }
+        }
+    }
+}
+#+END_SRC
+
+Output:
+
+#+BEGIN_SRC
+Current thread: Thread[main, 5,main]
+After name change: Thread[My Thread,5,main]
+5
+4
+3
+2
+1
+#+END_SRC
+
+* Creating a Thread
+Java defines two ways in which this can be accomplished:
+- You can implement the Runnable interface
+- You can extend the Thread class, itself
+
+** Implementing Runnable
+The easiest way to create a thread is to create a class that implements the *Runnable* interface.
+
+
+Runnable abstracts a unit of executable code. You can construct a thread on any object that implements Runnable. To implement Runnable, a class need only implement a single method called run(), which is declared like this:
+#+BEGIN_SRC java
+public void run();
+#+END_SRC

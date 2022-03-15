@@ -1,4 +1,5 @@
 #+TITLE: Applet Programming
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
 
 * Introduction
 Applet are small java programs that are primarily used in Internet Computing. They are be transported over internet from one computer to another and run using the Applet Viewer or any web browser that supports Java.
@@ -35,6 +36,10 @@ Although both the applets and stand-alone applications are java programs, they a
 - Applets are restricted from using libraries from other languages such as C or C++.
 
 All these restrictions and limitations are placed in the interest of security of systems. These restrictions ensure that an applet cannot do any damage to the local system.
+
+* Difference between Java Application and Java Applet
+
+
 
 * Preparation To Write Applets
 First of all, let us consider the situations when we might need to use applets.
@@ -147,3 +152,76 @@ Almost every applet will have a *paint()* method. Like other methods in the life
 
 
 NOTE: Display state is not considered as a part of the applet's life cycle. In fact, the paint() method is defined in the *Applet* class. It is inherited from the *Component* class, a super class of Applet.
+
+* Designing a Web Page
+A web page is basically made up of text and HTML tags that can be interpreted by a Web browser or an applet viewer. Like Java source code, it can be prepared using any ASCII text editor. Web pages are stored using a file extension *.html* such as *MyApplet.html*.
+
+
+Web pages include both text that we want to display and HTML tags(commands) to Web Browser. A Web page is marked by an opening HTML tag <HTML> and a closing HTML tag </HTML> and is divided into following three major sections:
+
+
+ 1. Comment section(optional)
+ 2. Head section (Optional, but imp.)
+ 3. Body section
+
+
+** Comment Section
+This section contains comments about the web page. It is important to include comments that tell us what is going on in the Web page.
+A comment line begins with a *<!* and ends with a *>*.
+
+
+Web browser will ignore the text enclosed between them.
+
+** Head Section
+The head section is defined with a starting <HEAD> tag and a closing </HEAD> tag. This section usually contains a title for the web page as shown bellow.
+#+BEGIN_SRC html
+<HEAD>
+  <TITLE> Welcome to Java Applets </TITLE>
+</HEAD>
+#+END_SRC
+
+** Body Section
+After the head section comes the body section. We call this as body section because this section contains the entire information about the web page and its behaviour. We can set up many options to indicate how our page must appear on the screen(like color, location, sound, etc.,).
+
+
+Shown below is a simple body section:
+#+BEGIN_SRC html
+<BODY>
+  <CENTER>
+    <H1> Welcome to the World of Applets </H1>
+  </CENTER>
+  <BR>
+  <APPLET ...>
+
+  </APPLET>
+</BODY>
+#+END_SRC
+
+* Applet Tag
+The <APPLET..> tag supplies the name of the applet to be loaded and tells the browser how much space the applet requires. The ellipsis in the tag <APPLET..> indicates that it contains certain attributes that must specified.
+
+
+The <APPLET> tag given below specifies the minimum requirements to place the *HelloJava* applet on a Web page:
+
+#+BEGIN_SRC html
+<APPLET
+  CODE = helloJava.class
+  WIDTH = 400
+  HEIGHT = 200 >
+</APPLET>
+#+END_SRC
+
+
+The HTML code tells the browser to load the compiled Java applet *HelloJava.class*, which is in the same directory as the HTML file. And also specifies the display area of the applet output as 400 pixels width and 200 pixels height.
+
+* Running the Applet
+Now that we have created applet files as well as the HTML file containing the applet, we must have the following files in our current directory:
+
+- HelloJava.java
+- HelloJava.class
+- HelloJava.html
+
+
+To run an applet, we require one of the following tools:
+1. Java-enables web browser
+2. Java appletviewer
