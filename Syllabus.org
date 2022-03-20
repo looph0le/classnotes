@@ -2,47 +2,53 @@
 
 * System Analysis and Design
 ** Jyoti Verma
-*** System concepts & Information system environment:
-- System Concepts
-- Definition
-- Characteristics of a system
-- Elements of Systems
-- Introduction to systems analysis and design
-- System analysis
-- System Design
-- System Development Life Cycle
+*** System concepts & Information system environment:[0/8]
+- [ ] System Concepts
+- [ ] Definition
+- [ ] Characteristics of a system
+- [ ] Elements of Systems
+- [ ] Introduction to systems analysis and design
+- [ ] System analysis
+- [ ] System Design
+- [ ] System Development Life Cycle
 
-*** System Planning And Investigation
-- Where does the system analyst come form?
-- What does he do?
-- Preparating for case as a system analyst
-- Technical Skills
-- Communication Skills
-- Role of System Analyst
-- Change agent
-- Investigation and monitor
-- Phychologist
-- Sales person
-- Motivator
-- Politician plan of the system analyst
-- Position in the MIS organisation
+*** System Planning And Investigation [0/13]
+- [ ] Where does the system analyst come form?
+- [ ] What does he do?
+- [ ] Preparating for case as a system analyst
+- [ ] Technical Skills
+- [ ] Communication Skills
+- [ ] Role of System Analyst
+- [ ] Change agent
+- [ ] Investigation and monitor
+- [ ] Phychologist
+- [ ] Sales person
+- [ ] Motivator
+- [ ] Politician plan of the system analyst
+- [ ] Position in the MIS organisation
 
 *** File organisation
-*** System Testing
-- System testing conversion
-- Combating resistance to change
-- past implementation
-- Review
-- Software maintenance
-- Hardware/Software selection
-- Security disaster / Recovery
-- Ethics in System Development
+*** System Testing [0/8]
+- [ ] System testing conversion
+- [ ] Combating resistance to change
+- [ ] past implementation
+- [ ] Review
+- [ ] Software maintenance
+- [ ] Hardware/Software selection
+- [ ] Security disaster / Recovery
+- [ ] Ethics in System Development
 
 * Programming In Java
-** Ruchita Tailor (Herbert Schildt except Java applet)
-- Chapter 3 : Data Types, Variables, and Arrays
-- Chapter 5 : Control Statement
-- Chapter 7 : A closer Look at Methods and Classes
-- Chapter 8 : Inheritance
-- Chapter 9 : Packages and Interfaces
-- Java Applets
+** Ruchita Tailor (Herbert Schildt except Java applet) [0/6]
+- [ ] Chapter 3 : Data Types, Variables, and Arrays
+- [ ] Chapter 5 : Control Statement
+- [ ] Chapter 7 : A closer Look at Methods and Classes
+- [ ] Chapter 8 : Inheritance
+- [ ] Chapter 9 : Packages and Interfaces
+- [ ] Java Applets PDF
+
+* Rational Database and Management Systems
+
+* Computer Networks
+
+* Fundamentals Of Operating System
