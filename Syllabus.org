@@ -1,4 +1,5 @@
 #+TITLE: Syllabus
+#+AUTHOR: Mitansh Panchal
 
 * System Analysis and Design
 ** Jyoti Verma
@@ -38,6 +39,15 @@
 - [ ] Security disaster / Recovery
 - [ ] Ethics in System Development
 
+** Khushbu Panchal [/]
+- [ ] Feasibility Study
+- [ ] Types of Analysis
+- [ ] Constbenifit Analysis
+- [ ] The Process And Stages of System Design
+- [ ] System Design
+- [ ] HIPO and IPO Charts
+- [ ] Tools of Structured Analysis
+
 * Programming In Java
 ** Ruchita Tailor (Herbert Schildt except Java applet) [0/6]
 - [ ] Chapter 3 : Data Types, Variables, and Arrays
@@ -48,7 +58,43 @@
 - [ ] Java Applets PDF
 
 * Rational Database and Management Systems
+** Ruchita Tailor [/]
+- [ ] Unit 1 : Introduction To RDBMS
+- [ ] Unit 2 : Data Architecture
+- [ ] Unit 3 : Data Models
+- [ ] Normalization
+- [ ] Chap 7 : Relational Data Model
+- [ ] Chap 8 : Relational Algebra
+- [ ] Chap 9 : Functional Dependency
+
+** Khushbu Panchal [/]
+- [ ] SQL Operators
+- [ ] Definitions
+- [ ] Functions
+- [ ] Grant and Revoke
+- [ ] Index
+- [ ] Joins
+- [ ] Relational Algebra
+- [ ] Oracle Basic Query
+- [ ] View
 
 * Computer Networks
+** Ruchita Tailor [/]
+- [ ] Network Security
+- [ ] Cryptography
+- [ ] DNS
+
+** Khushbu Panchal [/]
+- [ ] Network Interface Card (NIC)
+- [ ] Software for network
+
+** Jyoti Verma [/]
+- N/A
 
 * Fundamentals Of Operating System
+** Ruchita Tailor [/]
+- [ ] Unit 1 : Introduction to OS
+- [ ] Unit 2 : Process Management And Threads
+- [ ] Unit 3 : IPC (Inter Process Communication)
+- [ ] Memory Management
+- [ ] File Management
