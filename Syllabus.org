@@ -3,7 +3,7 @@
 
 * System Analysis and Design
 ** Jyoti Verma
-*** System concepts & Information system environment:[0/8]
+*** System concepts & Information system environment:
 - [ ] System Concepts
 - [ ] Definition
 - [ ] Characteristics of a system
@@ -13,7 +13,7 @@
 - [ ] System Design
 - [ ] System Development Life Cycle
 
-*** System Planning And Investigation [0/13]
+*** System Planning And Investigation
 - [ ] Where does the system analyst come form?
 - [ ] What does he do?
 - [ ] Preparating for case as a system analyst
@@ -29,7 +29,7 @@
 - [ ] Position in the MIS organisation
 
 *** File organisation
-*** System Testing [0/8]
+*** System Testing
 - [ ] System testing conversion
 - [ ] Combating resistance to change
 - [ ] past implementation
@@ -39,7 +39,7 @@
 - [ ] Security disaster / Recovery
 - [ ] Ethics in System Development
 
-** Khushbu Panchal [/]
+** Khushbu Panchal
 - [ ] Feasibility Study
 - [ ] Types of Analysis
 - [ ] Constbenifit Analysis
@@ -49,7 +49,7 @@
 - [ ] Tools of Structured Analysis
 
 * Programming In Java
-** Ruchita Tailor (Herbert Schildt except Java applet) [0/6]
+** Ruchita Tailor (Herbert Schildt except Java applet)
 - [ ] Chapter 3 : Data Types, Variables, and Arrays
 - [ ] Chapter 5 : Control Statement
 - [ ] Chapter 7 : A closer Look at Methods and Classes
@@ -58,7 +58,7 @@
 - [ ] Java Applets PDF
 
 * Rational Database and Management Systems
-** Ruchita Tailor [/]
+** Ruchita Tailor
 - [ ] Unit 1 : Introduction To RDBMS
 - [ ] Unit 2 : Data Architecture
 - [ ] Unit 3 : Data Models
@@ -67,7 +67,7 @@
 - [ ] Chap 8 : Relational Algebra
 - [ ] Chap 9 : Functional Dependency
 
-** Khushbu Panchal [/]
+** Khushbu Panchal
 - [ ] SQL Operators
 - [ ] Definitions
 - [ ] Functions
@@ -79,20 +79,20 @@
 - [ ] View
 
 * Computer Networks
-** Ruchita Tailor [/]
+** Ruchita Tailor
 - [ ] Network Security
 - [ ] Cryptography
 - [ ] DNS
 
-** Khushbu Panchal [/]
+** Khushbu Panchal
 - [ ] Network Interface Card (NIC)
 - [ ] Software for network
 
-** Jyoti Verma [/]
+** Jyoti Verma
 - N/A
 
 * Fundamentals Of Operating System
-** Ruchita Tailor [/]
+** Ruchita Tailor
 - [ ] Unit 1 : Introduction to OS
 - [ ] Unit 2 : Process Management And Threads
 - [ ] Unit 3 : IPC (Inter Process Communication)
