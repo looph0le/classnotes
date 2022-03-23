@@ -1,0 +1,26 @@
+#+TITLE: History And Evolution Of Java
+
+* Java's Lineage
+Java is related to C++, which is direct descendant of C.
+Much of the character of Java is inherited from these two languages. From C, java derived its syntax.
+Many of java's object-oriented features were influence by C++.
+
+* The Birth of Modern Programming: C
+- The C language shook the computer world. Its impact should not be underestimated, because it fundamentally changed the way programming was approached and thought about.
+- The creation of C was direct result of the need for a structured, efficient, hight-level language that could replace assembly code when creating systems programs.
+- FORTRAN could be used to write fairly efficient programs for scientific applications, it was not very good for system code.
+- BASIC was easy to learn, it wasn't very powerful, and it lack of structure made it usefulness questionable for large programs.
+- Assembly language can be used to produce highly efficient programs, but it is not easy to lean or use effectively. Further, debugging assembly code was quite difficult.
+- BASIC, COBOL, and FORTRAN were not designed around structured principles.
+- Pascal was structured, they were not designed for efficiency, and failed to include certain features necessary to make them applicable to a wide range of programs.
+- C, Invented and first implemented by Dennis Ritchie running UNIX operating system, C was the result of a development process that started with an older language called BCPL, developed by Martin Richards.
+- BPCL influenced a language called B, invented by Ken Thompson, which led to the development of C in the 1970s.
+- The creation of C is considered by many to have marked the beginning of the modern age of computer languages. It successfully synthesized the conflicting attributes that had so troubled earlier languages. The result was a powerful, efficient, structured language that was relatively easy to learn.
+- In short, C is a language designed by and for programmers. As you will see, Java inherited this legacy.
+
+* C++ The next Step
+- During the late 1970s and early 1980s, C became the dominant computer programming language, and it is still widely used today.
+- Throughout the history of programming, the increasing complexity of programs has driven the need for better ways to manage the complexity.
+- The 1960s gave birth to /structured programming/. This is the method of programming championed by languages such as C.
+- However, even with structured programming methods, once a project reaches a certain size, its complexity exceeds what programmers can manage.
+- To solve this problem, a new way to program was invented, called Object-oriented Programming. OOP is a programming methodology that helps organize complex programs through the use of inheritance, encapsulation, and polymorphism.

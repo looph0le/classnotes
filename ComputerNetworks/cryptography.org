@@ -1,0 +1,72 @@
+#+TITLE: Cryptography
+
+* Introduction
+Network security is mostly achieved through  the use of cyptography, a science based on abstract algebra.
+Let us introduce the issues involved in cryptography. First, we need to define some terms;
+
+- Cryptography
+  + Cryptography, a word with Greek origin, means "secret writing." However, we use the term to refer to the science and art of transforming messages to make them secure and immune to attack.
+
+- Plaintext and Ciphertext
+  + The original message, before being transformed, is called plaintext. After the message is transformed, it is called ciphertext.
+  + A encryption algorithm transformes the plaintext into ciphertext.
+  + A decription algorithm transformes the ciphertext back into plaintext.
+  + The sender uses an encryption algorithm and the receiver uses a decryption algorithm.
+
+- Cipher
+  + We refer to encryption and decryption algorithms as ciphers.
+  + The term cipher is also used to refer the different categories of algorithms in cryptography. This is not to say that every sender-receiver pair needs thier very own unique cipher for a secure communication.
+  + One cipher can server millions of communication pairs.
+
+- Key
+  + A key is a number(or a set of numbers) that the cipher, as an algorithm, operates on
+  + To encrypt a message, we need an encryption algorithm, an encryption key, and the plaintext. These creates the cipher.
+  + To decrypt a message, we need a decryption algorithm, a decryption key, and the ciphertext. These reveal the original plaintext.
+
+- Alice, Bob, and Eve
+  + Alice is the person who needs to send the secure data.
+  + Bob is the recipient of the data.
+  + Eve is the person who somehow disturbs the communication between Alice and Bob by intercepting messages to uncover the data or by sending her own disguised messages.
+
+* Two Categories
+We can divide all the cryptography algorithm into two groups:
+** Symmetric-key(also called secret-key)
++ In Symmetric-key cryptography, the same key is used by both parties. The sender uses this key and an encryption algorithm to encrypt data.
++ The receiver uses the same key and the corresponding algorithm to decrypt the data.
+
+** Asymmetric-key(also called public key)
++ In Asymmetric or public-key, there are two keys: a private key and a public key.
++ The private key is kept by the receiver. The public key is announced to the public.
++ In public-key encryption/decription, the public key that is used for encryption is different from the private key that is used for decryption.
+
+* Three Types of keys
++ The reader may have noticed that we are dealing with three types of keys in cryptography: the secret key, the public key, and the private key.
++ The secret key, is the shared key used in symmetric-key cryptography.
++ The public and private key are used in asymmetric-key cryptography.
+
+* Comparison
++ let us compare symmetric-key and asymmetric-key cryptography.
++ encryption can be thought of as electronic locking; decryption as electronic unlocking.
++ The sender puts the message in a box and locks the box by using a key.
++ The reciver unlocks the box with a key and takes out the message.
++ The difference lies in the mechanism of the locking and unlocking and the type of keys used.
++ In symmetric-key cryptography, the same key locks and unlock the box. In asymmetric-key cryptography, one key locks the box, but another key is needed to unlock it.
+
+* Symmetric-key cryptography
++ Symmetric-key cryptography started thousands of year ago when people needed to exchange secrets(for example, in a war).
++ We still mainly use symmetric-key cryptography in our network security.
+
+** Traditional Ciphers
++ We briefly introduce some traditional ciphers, which are character-oriented. Although these are now obsolete, the goal is to show how modern cipher evolved from them.
++ We can divide traditional symmetric-key cipher into two broad categories:
+
+*** Substitution Cipher
++ A substitution cipher substitution one symbol with another.
++ If the symbol in the plaintext are alphabetic characters, we can replace one character with another.
++ Substitution cipher can be categorized as either monoalphabetic or polyalphabetic ciphers.
++ In monoalphabetic cipher, a character (or a symbol) in the plaintext is always changed to the same character (or symbol) in the ciphertext regardless of its position in the text.
++ In polyalphabetic cipher, each occurrence of a character can have a different substitute. The relationship between a character in the plaintext to a character in the ciphertext is a one-to-many relationship.
+
+*** Transposition Cipher
++ In a transposition cipher, there is no substitution of characters; instead, their locations change. A character in the first position of the plaintext may appear in the tenth position of the ciphertext.
++ A transposition cipher reorders symbols in a block of symbols.
