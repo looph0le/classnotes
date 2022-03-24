@@ -70,3 +70,6 @@ We can divide all the cryptography algorithm into two groups:
 *** Transposition Cipher
 + In a transposition cipher, there is no substitution of characters; instead, their locations change. A character in the first position of the plaintext may appear in the tenth position of the ciphertext.
 + A transposition cipher reorders symbols in a block of symbols.
++ In a transposition cipher, the key is a mapping between the position of the symbols in the plaintext and cipher text.
+
+** Simple modern ciphers
